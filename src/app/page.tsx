@@ -7,12 +7,12 @@ import Spacing from "@/components/Spacing";
 import MovingText2 from "@/components/MovingText/MovingText2";
 import VideoModal from "@/components/VideoModal";
 import PostSlider from "@/components/Slider/PostSlider";
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Caliber6',
-  description: 'Still in development',
-}
+  title: "Caliber6",
+  description: "Still in development",
+};
 
 export default function Home() {
   const serviceData1 = [
@@ -143,12 +143,12 @@ export default function Home() {
       {/* End About Section */}
       {/* Start Blog Section */}
       <Spacing lg="150" md="80" />
-      <Div className="cs-shape_wrap_4">
+      <Div className="cs-shape_wrap_4 w-full">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
           <Div className="row">
-            <Div className="col-xl-4">
+            <Div className="col-xl-4 ">
               <SectionHeading
                 title="Explore recent publication"
                 subtitle="Our Blog"
@@ -157,11 +157,11 @@ export default function Home() {
               />
               <Spacing lg="90" md="45" />
             </Div>
-            <Div className="col-xl-7 offset-xl-1">
+            {/* <Div className="col-xl-7 offset-xl-1">
               <Div className="cs-half_of_full_width">
                 <PostSlider />
               </Div>
-            </Div>
+            </Div> */}
           </Div>
         </Div>
       </Div>
