@@ -9,7 +9,8 @@ import VideoModal from "@/components/VideoModal";
 import PostSlider from "@/components/Slider/PostSlider";
 import type { Metadata } from "next";
 import ServiceList from "@/components/ServiceList";
-import { getServicesNameAndShortDescription } from "@/utils/sanityActions";
+import { getClientReviews, getServicesNameAndShortDescription } from "@/utils/sanityActions";
+import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 
 export const metadata: Metadata = {
   title: "Caliber6",
@@ -55,6 +56,7 @@ export default async function Home() {
 
   const serviceDataProp = await getServicesNameAndShortDescription();
 
+  const reviewData = await getClientReviews();
 
   const serviceData1 = serviceDataProp.map((service: any, index: number) => {
     if (index % 2 === 0) {
@@ -195,6 +197,10 @@ export default async function Home() {
         </Div>
       </Div>
       {/* End Blog Section */}
+      <Spacing lg="125" md="55" />
+      {reviewData && reviewData.length > 1 && (
+        <TestimonialSlider reviewData={reviewData} />
+      )}
     </main>
   );
 }
