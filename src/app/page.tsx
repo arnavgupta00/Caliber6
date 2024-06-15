@@ -116,11 +116,13 @@ export default async function Home() {
           btnLink="/services"
         />
       </Div>
-      <Spacing lg="130" md="70" />
+      <Spacing lg="70" md="70" />
 
       <MovingText2
         reverseDirection={false}
         data={[
+          ...serviceData1WithoutUndefined,
+          ...serviceData2WithoutUndefined,
           ...serviceData1WithoutUndefined,
           ...serviceData2WithoutUndefined,
         ]}
@@ -129,6 +131,8 @@ export default async function Home() {
       <MovingText2
         reverseDirection
         data={[
+          ...serviceData1WithoutUndefined,
+          ...serviceData2WithoutUndefined,
           ...serviceData1WithoutUndefined,
           ...serviceData2WithoutUndefined,
         ]}
@@ -222,7 +226,7 @@ export default async function Home() {
       </Div>
       {/* End Blog Section */}
       <Spacing lg="130" md="70" />
-      <Div className="container row pl-24 ">
+      <Div className="container row ">
       {reviewData && reviewData.length > 1 && (
         <TestimonialSlider reviewData={reviewData} />
       )}

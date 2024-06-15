@@ -83,7 +83,7 @@ const TestimonialSlider: React.FC<{ reviewData: any }> = (params) => {
         <Div className="cs-shape_3 cs-to_up">
           <img src="/images/shape_1.svg" alt="Shape" />
         </Div>
-        <Div className="container">
+        <Div className="container pl-24 pr-24">
           <Div className="cs-testimonial_slider">
             <Div className="cs-testimonial_slider_left">
               <Slider {...settings}>
