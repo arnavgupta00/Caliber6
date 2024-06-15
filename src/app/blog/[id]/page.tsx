@@ -8,6 +8,9 @@ import { getBlogByID } from "@/utils/sanityActions";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
+export const revalidate = 0; 
+
+
 export default async function Page({ params }: { params: { id: string } }) {
   var blog = await getBlogByID(params.id);
   var blog = blog[0];

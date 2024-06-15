@@ -118,14 +118,19 @@ export default function Header({ variant }: HeaderProps) {
                         About
                       </Link>
                     </li>
-                    {/* <li className="menu-item-has-children">
+                    <li>
+                      <Link href="team" onClick={() => setMobileToggle(false)}>
+                        Team
+                      </Link>
+                    </li>
+                    <li className="menu-item">
                       <Link
                         href="/service"
                         onClick={() => setMobileToggle(false)}
                       >
                         Services
                       </Link>
-                      <DropDown>
+                      {/* <DropDown>
                         <ul>
                           <li>
                             <Link
@@ -144,8 +149,8 @@ export default function Header({ variant }: HeaderProps) {
                             </Link>
                           </li>
                         </ul>
-                      </DropDown>
-                    </li> */}
+                      </DropDown> */}
+                    </li>
                     {/* <li className="menu-item-has-children">
                       <Link
                         href="/portfolio"

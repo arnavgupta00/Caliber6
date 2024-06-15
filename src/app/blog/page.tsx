@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   description: "Still in development",
 };
 
-export const revalidate = 0; // revalidate at most every hour
-
+export const revalidate = 0; 
 export default async function Page() {
   const blogs = await getBlogs();
   //console.log(blogs);
@@ -32,8 +31,16 @@ export default async function Page() {
       <Div className="container">
         <Div className="row">
           <Div className="col-lg-8">
-            {blogs.map((item: any, index: any) => {
+            {blogs.map((item: { mainImage: any; title: string; content: { heading: string; _key: string; paragraphs: any; }[]; _createdAt: string; category: string; _id: string; }, index: any) => {
               //console.log(item);
+                            
+              if(!item.content) return null;
+              if(!item._id) return null;
+              if(!item.mainImage) return null;
+              if(!item.title) return null;
+              if(!item.category) return null;
+              if(!item._createdAt) return null;
+              if(item.content.length === 0) return null;
               return (
                 <Div key={index}>
                   <PostStyle2

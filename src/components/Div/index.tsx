@@ -5,6 +5,7 @@ interface DivProps {
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
+  onMouseEnter?: () => void;
 }
 
 export default function Div(props: DivProps) {

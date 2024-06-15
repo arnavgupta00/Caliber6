@@ -26,10 +26,15 @@ export default async function PostStyle2({
   categoryHref,
   href,
 }: PostStyle2Props) {
-  console.log(thumb.asset);
+  //console.log(thumb.asset);
+  
+  const MainImageUrl =
+    (thumb.asset &&
+      urlFor(thumb.asset).width(872).height(500).url()) ||
+    null;
 
-  const MainImageUrl = urlFor(thumb.asset).width(872).height(500).url(); 
-
+    if(!MainImageUrl) return null;
+    if(href === "undefined") return null;
   return (
     <Div className="cs-post cs-style2">
       <Link href={"/blog/"+href} className="cs-post_thumb cs-radius_15">

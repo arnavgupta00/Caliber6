@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.css';
+import 'slick-carousel/slick/slick.css';
 import "./globals.css";
 import "@/styles/globals.scss"
 import Header from "@/components/Header";

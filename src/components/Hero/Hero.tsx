@@ -37,6 +37,11 @@ const Hero: React.FC<Hero4Props> = ({
           </Div>
         </Div>
       </Div>
+      <a href={scrollDownId} className="cs-down_btn " style={{
+        bottom:"200px"
+      }}>
+        .
+      </a>
       <VerticalLinks data={heroSocialLinks} title={socialLinksHeading} />
       {(phoneNumber || email) && (
         <Div className="cs-hero_social_wrap cs-left_side cs-primary_font cs-primary_color">
@@ -54,9 +59,7 @@ const Hero: React.FC<Hero4Props> = ({
           </ul>
         </Div>
       )}
-      <a href={scrollDownId} className="cs-down_btn">
-        .
-      </a>
+      
     </Div>
   );
 }

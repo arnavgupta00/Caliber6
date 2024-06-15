@@ -30,6 +30,15 @@ interface RecentPostData {
 
 export default function Sidebar(params :{tagdata: any}) {
   console.log("params.tagdata", params.tagdata);
+
+  const removeUndefined = (data: any) => {
+    return data.filter((item: any) => item !== undefined);
+  }
+  const tagData = removeUndefined(params.tagdata);
+
+  console.log("params.tagdataU", tagData);
+
+
   // const tagData: Tag[] = [
   //   {
   //     title: 'Business',
@@ -152,7 +161,7 @@ export default function Sidebar(params :{tagdata: any}) {
         <SideMenuWidget title='Archives' data={archiveData}/>
       </Div> */}
       <Div className="cs-sidebar_item">
-        <TagWidget title='Tags' data={params.tagdata}/>
+        <TagWidget title='Tags' data={tagData}/>
       </Div>
     </>
   );

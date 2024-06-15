@@ -8,41 +8,19 @@ import MovingText2 from "@/components/MovingText/MovingText2";
 import VideoModal from "@/components/VideoModal";
 import PostSlider from "@/components/Slider/PostSlider";
 import type { Metadata } from "next";
+import ServiceList from "@/components/ServiceList";
+import { getServicesNameAndShortDescription } from "@/utils/sanityActions";
 
 export const metadata: Metadata = {
   title: "Caliber6",
   description: "Still in development",
 };
+export const revalidate = 0; 
 
-export default function Home() {
-  const serviceData1 = [
-    {
-      title: "Systems Integration",
-      href: "/service/service-details",
-    },
-    {
-      title: "Enterprise Migrations",
-      href: "/service/service-details",
-    },
-    {
-      title: "Automation & AI",
-      href: "/service/service-details",
-    },
-  ];
-  const serviceData2 = [
-    {
-      title: "Staffing & Recruiting",
-      href: "/service/service-details",
-    },
-    {
-      title: "Enterprise Migrations",
-      href: "/service/service-details",
-    },
-    {
-      title: "Systems Integration",
-      href: "/service/service-details",
-    },
-  ];
+
+export default async function Home() {
+  
+ 
   const heroSocialLinks = [
     {
       name: "Linkedin",
@@ -74,6 +52,35 @@ export default function Home() {
         "Employee and workplace satisfaction rates have surged by over 40% in organizations adopting AI and automation, indicating the positive impact of streamlined processes and reduced repetitive workloads.",
     },
   ];
+
+  const serviceDataProp = await getServicesNameAndShortDescription();
+
+
+  const serviceData1 = serviceDataProp.map((service: any, index: number) => {
+    if (index % 2 === 0) {
+      return {
+        title: service.serviceName,
+        href: `/service/${service._id}`,
+      };
+    }
+  });
+
+  const serviceData1WithoutUndefined = serviceData1.filter(
+    (service: any) => service !== undefined
+  );
+
+  const serviceData2 = serviceDataProp.map((service: any, index: number) => {
+    if (index % 2 !== 0) {
+      return {
+        title: service.serviceName,
+        href: `/service/${service._id}`,
+      };
+    }
+  });
+  const serviceData2WithoutUndefined = serviceData2.filter(
+    (service: any) => service !== undefined
+  );
+
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
       {/* Start Hero Section */}
@@ -95,23 +102,44 @@ export default function Home() {
           bgUrl="/images/funfact_shape_bg.svg"
         />
       </Div>
+      {/* Start Moving Text Section */}
+      <MovingText2 reverseDirection={false} data={[...serviceData1WithoutUndefined , ...serviceData2WithoutUndefined]} />
+      <Spacing lg="20" md="10" />
+      <MovingText2 reverseDirection data={[...serviceData1WithoutUndefined , ...serviceData2WithoutUndefined]} />
+      {/* End Moving Text Section */}
       {/* Start Services Section */}
       <Spacing lg="145" md="80" />
       <Div className="container">
         <SectionHeading
-          title="What we provide"
+          title="Our core services"
           subtitle="Services"
           variant="cs-style1 text-center"
           btnLink="/services"
         />
-        <Spacing lg="65" md="45" />
+        <Spacing lg="70" md="45" />
+        <ServiceList serviceDataProp={serviceDataProp} />
       </Div>
       {/* End Services Section */}
-      {/* Start Moving Text Section */}
-      <MovingText2 reverseDirection={false} data={serviceData1} />
-      <Spacing lg="20" md="10" />
-      <MovingText2 reverseDirection data={serviceData2} />
-      {/* End Moving Text Section */}
+      {/* Start Video Block Section */}
+      <Spacing lg="130" md="70" />
+      <Div className="container">
+        <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
+          Our Expertise: <span> Your Business Potential</span>
+        </h2>
+        <span
+          className="cs-font_20 cs-m0 text-center cs-line_height_4"
+          style={{ display: "block", margin: "0 auto", textAlign: "center" }}
+        >
+          Dive into our expansive suite of consulting services crafted to unlock
+          the full potential of your enterprise. Our seasoned team is committed
+          to tailoring custom solutions that yield concrete outcomes for your
+          distinct business hurdles.
+        </span>
+
+        <Spacing lg="70" md="70" />
+      </Div>
+      {/* End Video Block Section */}
+      
       {/* Start About Section */}
       <Div className="cs-shape_wrap_4 pl-24 pr-24">
         <Div className="cs-shape_4"></Div>
@@ -141,6 +169,7 @@ export default function Home() {
         </Div>
       </Div>
       {/* End About Section */}
+      
       {/* Start Blog Section */}
       <Spacing lg="150" md="80" />
       <Div className="cs-shape_wrap_4 w-full">
@@ -157,11 +186,11 @@ export default function Home() {
               />
               <Spacing lg="90" md="45" />
             </Div>
-            {/* <Div className="col-xl-7 offset-xl-1">
+            <Div className="col-xl-7 offset-xl-1">
               <Div className="cs-half_of_full_width">
                 <PostSlider />
               </Div>
-            </Div> */}
+            </Div>
           </Div>
         </Div>
       </Div>

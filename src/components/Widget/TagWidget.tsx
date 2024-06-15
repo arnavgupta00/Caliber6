@@ -12,6 +12,7 @@ interface TagWidgetProps {
 }
 
 export default function TagWidget({ title, data }: TagWidgetProps) {
+  if(!data) return null;
   return (
     <>
       <h4 className="cs-sidebar_widget_title">{title}</h4>
