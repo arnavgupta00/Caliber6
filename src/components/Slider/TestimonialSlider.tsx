@@ -58,7 +58,7 @@ const TestimonialSlider: React.FC<{ reviewData: any }> = (params) => {
   const settings = {
     asNavFor: nav1!,
     ref: (slider2: Slider) => setNav2(slider2),
-    slidesToShow: testimonialData.length,
+    slidesToShow: 3,
     swipeToSlide: true,
     focusOnSelect: true,
     centerMode: true,
