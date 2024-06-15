@@ -28,7 +28,7 @@ export default async function Page() {
         pageLinkText="Blog"
       />
       <Spacing lg="150" md="80" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24" >
         <Div className="row">
           <Div className="col-lg-8">
             {blogs.map((item: { mainImage: any; title: string; content: { heading: string; _key: string; paragraphs: any; }[]; _createdAt: string; category: string; _id: string; }, index: any) => {

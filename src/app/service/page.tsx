@@ -134,7 +134,7 @@ export default async function Page() {
         </Div>
       </Div>
       <Spacing lg="150" md="80" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24">
         <SectionHeading
           title="Why are we the best choice for you?"
           subtitle="Our core values"
@@ -148,7 +148,7 @@ export default async function Page() {
         <TestimonialSlider reviewData={reviewData} />
       )}
       <Spacing lg="150" md="80" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"

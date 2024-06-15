@@ -9,19 +9,20 @@ import VideoModal from "@/components/VideoModal";
 import PostSlider from "@/components/Slider/PostSlider";
 import type { Metadata } from "next";
 import ServiceList from "@/components/ServiceList";
-import { getClientReviews, getServicesNameAndShortDescription } from "@/utils/sanityActions";
+import {
+  getClientReviews,
+  getServicesNameAndShortDescription,
+} from "@/utils/sanityActions";
 import TestimonialSlider from "@/components/Slider/TestimonialSlider";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "Caliber6",
   description: "Still in development",
 };
-export const revalidate = 0; 
-
+export const revalidate = 0;
 
 export default async function Home() {
-  
- 
   const heroSocialLinks = [
     {
       name: "Linkedin",
@@ -88,7 +89,7 @@ export default async function Home() {
       {/* Start Hero Section */}
       <Hero
         title={`Empowering Businesses Through Strategic <br /> <span>Digital Solutions</span>`}
-        subtitle="By leveraging the synergy between people and technology, we unlock new digital possibilities, create measurable outcomes, and empower you to achieve groundbreaking success and shape your organization's future."
+        subtitle="By leveraging the synergy between people and technology, we unlock new digital possibilities, create measurable <br /> outcomes, and empower you to achieve groundbreaking success and shape your organization's future."
         scrollDownId="#service"
         socialLinksHeading="Follow Us"
         heroSocialLinks={heroSocialLinks}
@@ -105,12 +106,8 @@ export default async function Home() {
         />
       </Div>
       {/* Start Moving Text Section */}
-      <MovingText2 reverseDirection={false} data={[...serviceData1WithoutUndefined , ...serviceData2WithoutUndefined]} />
-      <Spacing lg="20" md="10" />
-      <MovingText2 reverseDirection data={[...serviceData1WithoutUndefined , ...serviceData2WithoutUndefined]} />
-      {/* End Moving Text Section */}
-      {/* Start Services Section */}
-      <Spacing lg="145" md="80" />
+      <Spacing lg="130" md="70" />
+
       <Div className="container">
         <SectionHeading
           title="Our core services"
@@ -118,35 +115,31 @@ export default async function Home() {
           variant="cs-style1 text-center"
           btnLink="/services"
         />
-        <Spacing lg="70" md="45" />
-        <ServiceList serviceDataProp={serviceDataProp} />
       </Div>
-      {/* End Services Section */}
-      {/* Start Video Block Section */}
       <Spacing lg="130" md="70" />
-      <Div className="container">
-        <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
-          Our Expertise: <span> Your Business Potential</span>
-        </h2>
-        <span
-          className="cs-font_20 cs-m0 text-center cs-line_height_4"
-          style={{ display: "block", margin: "0 auto", textAlign: "center" }}
-        >
-          Dive into our expansive suite of consulting services crafted to unlock
-          the full potential of your enterprise. Our seasoned team is committed
-          to tailoring custom solutions that yield concrete outcomes for your
-          distinct business hurdles.
-        </span>
 
-        <Spacing lg="70" md="70" />
-      </Div>
-      {/* End Video Block Section */}
-      
+      <MovingText2
+        reverseDirection={false}
+        data={[
+          ...serviceData1WithoutUndefined,
+          ...serviceData2WithoutUndefined,
+        ]}
+      />
+      <Spacing lg="20" md="10" />
+      <MovingText2
+        reverseDirection
+        data={[
+          ...serviceData1WithoutUndefined,
+          ...serviceData2WithoutUndefined,
+        ]}
+      />
+      {/* End Moving Text Section */}
+      {/* Start Services Section */}
+      <Spacing lg="130" md="70" />
       {/* Start About Section */}
       <Div className="cs-shape_wrap_4 pl-24 pr-24">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
-        <Spacing lg="150" md="80" />
         <Div className="container">
           <Div className="row">
             <Div className="col-lg-5 col-xl-4">
@@ -170,11 +163,42 @@ export default async function Home() {
           </Div>
         </Div>
       </Div>
+      <Spacing lg="130" md="70" />
+
       {/* End About Section */}
-      
+      {/* End Services Section */}
+      {/* Start Video Block Section */}
+      <Div className="container pl-24 pr-24">
+        <ServiceList serviceDataProp={serviceDataProp} />
+      </Div>
+
+      <Spacing lg="130" md="70" />
+      <Div className="container pl-24 pr-24">
+        <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
+          Our Expertise: <span> Your Business Potential</span>
+        </h2>
+        <span
+          className="cs-font_20 cs-m0 text-center cs-line_height_4"
+          style={{
+            display: "block",
+            margin: "0 auto",
+            marginTop: "20px",
+            textAlign: "center",
+          }}
+        >
+          Dive into our expansive suite of consulting services crafted to unlock
+          the full potential of your enterprise. Our seasoned team is committed
+          to tailoring custom solutions that yield concrete outcomes for your
+          distinct business hurdles.
+        </span>
+
+        <Spacing lg="70" md="70" />
+      </Div>
+      {/* End Video Block Section */}
+
       {/* Start Blog Section */}
       <Spacing lg="150" md="80" />
-      <Div className="cs-shape_wrap_4 w-full">
+      <Div className="cs-shape_wrap_4 w-full pl-24 pr-24">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
@@ -197,10 +221,52 @@ export default async function Home() {
         </Div>
       </Div>
       {/* End Blog Section */}
-      <Spacing lg="125" md="55" />
+      <Spacing lg="130" md="70" />
+      <Div className="container row pl-24 ">
       {reviewData && reviewData.length > 1 && (
         <TestimonialSlider reviewData={reviewData} />
       )}
+      </Div>
+      {/* Start award Section */}
+      <Spacing lg="130" md="70" />
+
+      {/* Start award Section */}
+      <Div className="container pl-24 pr-24">
+        <Div className="row align-items-center cs-column_reverse_lg">
+          <Div className="col-lg-5">
+            <Div className="cs-radius_15 cs-shine_hover_1">
+              <img
+                src="/images/about_img_5.jpeg"
+                alt="About"
+                className="cs-w100 cs-radius_5"
+              />
+            </Div>
+          </Div>
+          <Div className="col-lg-6 offset-lg-1">
+            <SectionHeading
+              subtitle="
+At Caliber6, we understand that every organization is unique. Our team of experts excels in refining processes and strategies across industries while ensuring seamless integration, development, and execution. We focus on driving efficiency and fostering business growth, delivering measurable success tailored to your specific needs."
+              title="Streamlined Processes for Your Success"
+              btnText="Learn More"
+              btnLink="/about"
+            />
+            <Spacing lg="0" md="40" />
+          </Div>
+        </Div>
+      </Div>
+      {/* End About Section */}
+      <Spacing lg="150" md="80" />
+
+      {/* Start CTA Section */}
+      <Div className="container pl-24 pr-24">
+        <Cta
+          title="Let’s disscuse make <br />something <i>cool</i> together"
+          btnText="Apply For Meeting"
+          btnLink="/contact"
+          bgSrc="/images/cta_bg_3.jpeg"
+        />
+      </Div>
+      {/* End CTA Section */}
     </main>
   );
 }

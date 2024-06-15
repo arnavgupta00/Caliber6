@@ -17,7 +17,7 @@ export default function ContactInfoWidget({withIcon, title}: ContactInfoWidgetPr
         </li>
         <li>
           {withIcon?<span className='cs-accent_color'><Icon icon="mdi:envelope" /></span>:''}
-          infotech@arino.com
+          caliber6@gmail.com
         </li>
         <li>
           {withIcon?<span className='cs-accent_color'><Icon icon="mdi:map-marker" /></span>:''}

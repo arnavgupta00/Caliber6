@@ -30,14 +30,7 @@ export default function ServicesTable(): JSX.Element {
               subtitle="Migrations by Caliber6 ensure secure, accurate, and
 timely transfer of your critical business information and
 processes between technologies. Whether you are
-upgrading, integrating, migrating systems, or
-transitioning to cloud-based solutions, our experienced
-professionals use proven strategies and advanced
-technology to minimize downtime, reduce risks, and
-guarantee a smooth migration process. Our approach is
-meticulous and tailored to preserve system and process
-integrity while enhancing accessibility and usability in its
-new environment." // price="29"
+upgrading, integrating, migrating systems. " // price="29"
               // currency="$"
               // timeline="monthly"
               // features={[

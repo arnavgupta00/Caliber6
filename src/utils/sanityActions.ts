@@ -8,9 +8,10 @@ export async function getBlogs() {
 }
 
 export async function getBlogByID(id: string) {
-  const query = `*[_type == "blogPost" && _id == "${id}" && !(_id in path("drafts.**"))]`;
+  const query = `*[_type == "blogPost" && _id == "${id}"]`;
   const data = await sanityClient.fetch(query);
-  return data.length > 0 ? data[0] : null;
+  console.log(data);
+  return data;
 }
 
 export async function getClientReviews() {

@@ -160,7 +160,7 @@ export default function Page() {
           />
         </Div>
       </Div>
-      <Spacing lg="145" md="80" />
+      
     </main>
   );
 }

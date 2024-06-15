@@ -1,51 +1,44 @@
-import React from 'react';
-import Div from '../Div';
-import ContactInfoWidget from '../Widget/ContactInfoWidget';
-import MenuWidget from '../Widget/MenuWidget';
-import Newsletter from '../Widget/Newsletter';
-import SocialWidget from '../Widget/SocialWidget';
-import TextWidget from '../Widget/TextWidget';
+import React from "react";
+import Div from "../Div";
+import ContactInfoWidget from "../Widget/ContactInfoWidget";
+import MenuWidget from "../Widget/MenuWidget";
+import Newsletter from "../Widget/Newsletter";
+import SocialWidget from "../Widget/SocialWidget";
+import TextWidget from "../Widget/TextWidget";
 
-interface FooterProps {
-  copyrightText?: string;
-  logoSrc?: string;
-  logoAlt?: string;
-  text?: string;
-}
-
-export default function Footer({ copyrightText, logoSrc, logoAlt, text }: FooterProps): JSX.Element {
+export default function Footer() {
   const copyrightLinks = [
     {
-      title: 'Terms of Use',
-      href: '/',
+      title: "Terms of Use",
+      href: "/",
     },
     {
-      title: 'Privacy Policy',
-      href: '/',
+      title: "Privacy Policy",
+      href: "/",
     },
   ];
 
   const serviceMenu = [
     {
-      title: 'UI/UX design',
-      href: '/service/service-details',
+      title: "Systems Integrations",
+      href: "/service/service-details",
     },
     {
-      title: 'WP development',
-      href: '/service/service-details',
+      title: "Enterprise Migrations",
+      href: "/service/service-details",
     },
     {
-      title: 'Digital marketing',
-      href: '/service/service-details',
+      title: "Automation & AI",
+      href: "/service/service-details",
     },
     {
-      title: 'React development',
-      href: '/service/service-details',
+      title: "Staffing and Recruiting",
+      href: "/service/service-details",
     },
   ];
 
   return (
-    <footer className="cs-fooer w-full pl-24 pr-24">
+    <footer className="cs-fooer">
       <Div className="cs-fooer_main">
         <Div className="container">
           <Div className="row">
@@ -54,7 +47,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }: Footer
                 <TextWidget
                   logoSrc="/images/footer_logo.svg"
                   logoAlt="Logo"
-                  text="Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium."
+                  text="We are dedicated to revolutionizing your business operations with cutting-edge solutions. As a premier consultancy, we specialize in providing bespoke services that drive efficiency, scalability, and growth."
                 />
                 <SocialWidget />
               </Div>
@@ -72,9 +65,10 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }: Footer
             <Div className="col-lg-3 col-sm-6">
               <Div className="cs-footer_item">
                 <Newsletter
-                  title="Subscribe"
-                  subtitle="At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit."
-                  placeholder="example@gmail.com"
+                  title="Ping me"
+                  subtitle="Ready to take your business to the next level? Contact us today to
+explore how our tailored digital solutions can drive your success."
+                  placeholder="caliber6@gmail.com"
                 />
               </Div>
             </Div>
@@ -84,11 +78,11 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }: Footer
       <Div className="container">
         <Div className="cs-bottom_footer">
           <Div className="cs-bottom_footer_left">
-            <Div className="cs-copyright">Copyright © 2022 Laralink.</Div>
+            <Div className="cs-copyright">Copyright © 2024 Calibersix.</Div>
           </Div>
-          <Div className="cs-bottom_footer_right">
+          {/* <Div className="cs-bottom_footer_right">
             <MenuWidget menuItems={copyrightLinks} variant=" cs-style2" />
-          </Div>
+          </Div> */}
         </Div>
       </Div>
     </footer>
