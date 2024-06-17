@@ -144,7 +144,7 @@ export default async function Page() {
         <ServicesTable />
       </Div>
       <Spacing lg="125" md="55" />
-      <Div className="container pl-24 ">
+      <Div className="container row ">
       {reviewData && reviewData.length > 1 && (
         <TestimonialSlider reviewData={reviewData} />
       )}
