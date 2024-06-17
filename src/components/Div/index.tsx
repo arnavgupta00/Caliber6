@@ -10,6 +10,6 @@ interface DivProps {
 
 export default function Div(props: DivProps) {
   return (
-    <div {...props}>{props.children}</div>
+    <div {...props} >{props.children}</div>
   );
 }

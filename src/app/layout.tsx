@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import 'bootstrap/dist/css/bootstrap.css';
-import 'slick-carousel/slick/slick.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "slick-carousel/slick/slick.css";
 import "./globals.css";
-import "@/styles/globals.scss"
+import "@/styles/globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 };
 const CustomCursor = dynamic(
   () => {
-    return import('@/components/CustomCursor');
+    return import("@/components/CustomCursor");
   },
-  { ssr: false },
+  { ssr: false }
 );
 export default function RootLayout({
   children,
@@ -27,12 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + "w-full"}>
+      <body
+        className={inter.className + "w-full"}
+        
+      >
         <Header />
         <CustomCursor />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }

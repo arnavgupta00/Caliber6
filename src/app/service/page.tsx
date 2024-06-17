@@ -28,11 +28,11 @@ export default async function Page() {
   console.log(serviceData);
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
-      <PageHeading
+      {/* <PageHeading
         title="Services"
         bgSrc="images/service_hero_bg.jpeg"
         pageLinkText="Services"
-      />
+      /> */}
       <Spacing lg="150" md="80" />
       <Div className="cs-shape_wrap_4 pl-24 pr-24">
         <Div className="cs-shape_4"></Div>

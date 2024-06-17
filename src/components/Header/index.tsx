@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import SocialWidget from '../Widget/SocialWidget';
-import Newsletter from '../Widget/Newsletter';
-import ContactInfoWidget from '../Widget/ContactInfoWidget';
-import Div from '../Div';
-import DropDown from './DropDown';
-import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+import SocialWidget from "../Widget/SocialWidget";
+import Newsletter from "../Widget/Newsletter";
+import ContactInfoWidget from "../Widget/ContactInfoWidget";
+import Div from "../Div";
+import DropDown from "./DropDown";
+import Link from "next/link";
 
 interface HeaderProps {
   variant?: string;
@@ -18,7 +18,7 @@ export default function Header({ variant }: HeaderProps) {
   const [mobileToggle, setMobileToggle] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 0) {
         setIsSticky(true);
       } else {
@@ -31,8 +31,8 @@ export default function Header({ variant }: HeaderProps) {
     <>
       <header
         className={`cs-site_header cs-style1 text-uppercase w-full pl-24 pr-24 ${
-          variant ? variant : ''
-        } cs-sticky_header ${isSticky ? 'cs-sticky_header_active' : ''}`}
+          variant ? variant : ""
+        } cs-sticky_header ${isSticky ? "cs-sticky_header_active" : ""}`}
       >
         <Div className="cs-main_header">
           <Div className="container">
@@ -46,7 +46,7 @@ export default function Header({ variant }: HeaderProps) {
                 <Div className="cs-nav cs-primary_font cs-medium">
                   <ul
                     className="cs-nav_list"
-                    style={{ display: `${mobileToggle ? 'block' : 'none'}` }}
+                    style={{ display: `${mobileToggle ? "block" : "none"}` }}
                   >
                     <li className="menu-item">
                       <Link href="/" onClick={() => setMobileToggle(false)}>
@@ -119,10 +119,18 @@ export default function Header({ variant }: HeaderProps) {
                       </Link>
                     </li>
                     <li>
+                      <Link
+                        href="career"
+                        onClick={() => setMobileToggle(false)}
+                      >
+                        Careers
+                      </Link>
+                    </li>
+                    {/* <li>
                       <Link href="team" onClick={() => setMobileToggle(false)}>
                         Team
                       </Link>
-                    </li>
+                    </li> */}
                     <li className="menu-item">
                       <Link
                         href="/service"
@@ -257,8 +265,8 @@ export default function Header({ variant }: HeaderProps) {
                   <span
                     className={
                       mobileToggle
-                        ? 'cs-munu_toggle cs-toggle_active'
-                        : 'cs-munu_toggle'
+                        ? "cs-munu_toggle cs-toggle_active"
+                        : "cs-munu_toggle"
                     }
                     onClick={() => setMobileToggle(!mobileToggle)}
                   >
@@ -288,7 +296,7 @@ export default function Header({ variant }: HeaderProps) {
 
       <Div
         className={
-          sideHeaderToggle ? 'cs-side_header active' : 'cs-side_header'
+          sideHeaderToggle ? "cs-side_header active" : "cs-side_header"
         }
       >
         <button

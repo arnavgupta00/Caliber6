@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 interface ContactInfoWidgetProps {
   withIcon?: boolean;
-  title: string;
+  title?: string;
 }
 
 export default function ContactInfoWidget({withIcon, title}: ContactInfoWidgetProps) {
