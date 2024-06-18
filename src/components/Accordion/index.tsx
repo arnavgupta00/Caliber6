@@ -19,6 +19,8 @@ export default function Accordion(faqs:{faqs:AccordionData[]}) {
 
   const accordionData: AccordionData[] = faqs.faqs;
 
+  console.log(faqs);
+
   return (
     <Div className="cs-accordians cs-style1">
       {accordionData.map((item, index) => (

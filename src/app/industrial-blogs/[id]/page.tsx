@@ -4,14 +4,14 @@ import PageHeading from "@/components/PageHeading";
 import Sidebar from "@/components/Sidebar.jsx";
 import Spacing from "@/components/Spacing";
 import { urlFor } from "@/utils/configSanity";
-import { getBlogByID } from "@/utils/sanityActions";
+import { getBlogByID, getIndustrialBlogByID } from "@/utils/sanityActions";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
 
 
 export default async function Page({ params }: { params: { id: string } }) {
-  var blog = await getBlogByID(params.id);
+  var blog = await getIndustrialBlogByID(params.id);
   var blog = blog[0];
  // console.log("=====================", blog, "=====================", params.id);
 

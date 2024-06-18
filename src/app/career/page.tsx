@@ -1,3 +1,5 @@
+import JobAccordion from "@/components/Accordion/jobPosting";
+import Accordion from "@/components/Accordion/jobPosting";
 import Card from "@/components/Card";
 import Cta from "@/components/Cta";
 import Div from "@/components/Div";
@@ -9,16 +11,19 @@ import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import Spacing from "@/components/Spacing";
 import { urlFor } from "@/utils/configSanity";
 import {
+  getCareers,
   getClientReviews,
+  getJobs,
   getServicesNameAndImage,
 } from "@/utils/sanityActions";
 
 export const revalidate = 0;
 
 export default async function Page() {
-  const reviewData = await getClientReviews();
 
-  const serviceData = await getServicesNameAndImage();
+  const careerData = await getCareers();
+
+  const jobData = await getJobs();
 
   const imageUrlFromAsset = (asset: any) => {
     const url = urlFor(asset).width(500).height(500).url();
@@ -26,7 +31,7 @@ export default async function Page() {
     return url;
   };
 
-  console.log(serviceData);
+  //console.log(jobData);
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
       <PageHeading
@@ -53,96 +58,96 @@ into the digital forefront."
             <Div className="col-xl-8">
               <Div className="row">
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                {serviceData.length > 0 && (
+                {careerData.length > 0 && (
                   <Div className="col-lg-3 col-sm-6">
                     <Card
-                      title={serviceData[0].serviceName}
-                      link={"/service/" + serviceData[0]._id}
-                      src={imageUrlFromAsset(serviceData[0].serviceImage.asset)}
-                      alt={serviceData[0].serviceName + " Image"}
+                      title={careerData[0].careerName}
+                      link={"/service/" + careerData[0]._id}
+                      src={imageUrlFromAsset(careerData[0].careerImage.asset)}
+                      alt={careerData[0].careerName + " Image"}
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
                 )}
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                {serviceData.length > 1 && (
+                {careerData.length > 1 && (
                   <Div className="col-lg-3 col-sm-6">
                     <Card
-                      title={serviceData[1].serviceName}
-                      link={"/service/" + serviceData[1]._id}
-                      src={imageUrlFromAsset(serviceData[1].serviceImage.asset)}
-                      alt={serviceData[1].serviceName + " Image"}
+                      title={careerData[1].careerName}
+                      link={"/service/" + careerData[1]._id}
+                      src={imageUrlFromAsset(careerData[1].careerImage.asset)}
+                      alt={careerData[1].careerName + " Image"}
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
                 )}
-                {serviceData.length > 2 && (
+                {careerData.length > 2 && (
                   <Div className="col-lg-3 col-sm-6">
                     <Card
-                      title={serviceData[2].serviceName}
-                      link={"/service/" + serviceData[2]._id}
-                      src={imageUrlFromAsset(serviceData[2].serviceImage.asset)}
-                      alt={serviceData[2].serviceName + " Image"}
-                    />
-                    <Spacing lg="0" md="30" />
-                  </Div>
-                )}
-                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                {serviceData.length > 3 && (
-                  <Div className="col-lg-3 col-sm-6">
-                    <Card
-                      title={serviceData[3].serviceName}
-                      link={"/service/" + serviceData[3]._id}
-                      src={imageUrlFromAsset(serviceData[3].serviceImage.asset)}
-                      alt={serviceData[3].serviceName + " Image"}
+                      title={careerData[2].careerName}
+                      link={"/service/" + careerData[2]._id}
+                      src={imageUrlFromAsset(careerData[2].careerImage.asset)}
+                      alt={careerData[2].careerName + " Image"}
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
                 )}
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                {serviceData.length > 4 && (
+                {careerData.length > 3 && (
                   <Div className="col-lg-3 col-sm-6">
                     <Card
-                      title={serviceData[4].serviceName}
-                      link={"/service/" + serviceData[4]._id}
-                      src={imageUrlFromAsset(serviceData[4].serviceImage.asset)}
-                      alt={serviceData[4].serviceName + " Image"}
+                      title={careerData[3].careerName}
+                      link={"/service/" + careerData[3]._id}
+                      src={imageUrlFromAsset(careerData[3].careerImage.asset)}
+                      alt={careerData[3].careerName + " Image"}
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
                 )}
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                {serviceData.length > 5 && (
+                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
+                {careerData.length > 4 && (
                   <Div className="col-lg-3 col-sm-6">
                     <Card
-                      title={serviceData[5].serviceName}
-                      link={"/service/" + serviceData[5]._id}
-                      src={imageUrlFromAsset(serviceData[5].serviceImage.asset)}
-                      alt={serviceData[5].serviceName + " Image"}
-                    />
-                    <Spacing lg="0" md="30" />
-                  </Div>
-                )}
-                {serviceData.length > 6 && (
-                  <Div className="col-lg-3 col-sm-6">
-                    <Card
-                      title={serviceData[6].serviceName}
-                      link={"/service/" + serviceData[6]._id}
-                      src={imageUrlFromAsset(serviceData[6].serviceImage.asset)}
-                      alt={serviceData[6].serviceName + " Image"}
+                      title={careerData[4].careerName}
+                      link={"/service/" + careerData[4]._id}
+                      src={imageUrlFromAsset(careerData[4].careerImage.asset)}
+                      alt={careerData[4].careerName + " Image"}
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
                 )}
                 <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
-                {serviceData.length > 7 && (
+                {careerData.length > 5 && (
                   <Div className="col-lg-3 col-sm-6">
                     <Card
-                      title={serviceData[7].serviceName}
-                      link={"/service/" + serviceData[7]._id}
-                      src={imageUrlFromAsset(serviceData[7].serviceImage.asset)}
-                      alt={serviceData[7].serviceName + " Image"}
+                      title={careerData[5].careerName}
+                      link={"/service/" + careerData[5]._id}
+                      src={imageUrlFromAsset(careerData[5].careerImage.asset)}
+                      alt={careerData[5].careerName + " Image"}
+                    />
+                    <Spacing lg="0" md="30" />
+                  </Div>
+                )}
+                {careerData.length > 6 && (
+                  <Div className="col-lg-3 col-sm-6">
+                    <Card
+                      title={careerData[6].careerName}
+                      link={"/service/" + careerData[6]._id}
+                      src={imageUrlFromAsset(careerData[6].careerImage.asset)}
+                      alt={careerData[6].careerName + " Image"}
+                    />
+                    <Spacing lg="0" md="30" />
+                  </Div>
+                )}
+                <Div className="col-lg-3 col-sm-6 cs-hidden_mobile"></Div>
+                {careerData.length > 7 && (
+                  <Div className="col-lg-3 col-sm-6">
+                    <Card
+                      title={careerData[7].careerName}
+                      link={"/service/" + careerData[7]._id}
+                      src={imageUrlFromAsset(careerData[7].careerImage.asset)}
+                      alt={careerData[7].careerName + " Image"}
                     />
                     <Spacing lg="0" md="30" />
                   </Div>
@@ -185,7 +190,7 @@ everything we do."
       <Div className="container  pr-24">
         <Div
           className="row align-items-center cs-column_reverse_lg"
-          style={{ flexDirection: "row-reverse" , justifyContent:"center"}}
+          style={{ flexDirection: "row-reverse", justifyContent: "center" }}
         >
           <Div className="col-lg-5">
             <Div className="cs-radius_15 cs-shine_hover_1">
@@ -202,7 +207,7 @@ everything we do."
               alignItems: "start",
               textAlign: "left",
               alignSelf: "start",
-              marginTop:"15%"
+              marginTop: "15%",
             }}
           >
             <SectionHeading
@@ -220,22 +225,70 @@ collaboration, and continuous growth."
         </Div>
       </Div>
       <Spacing lg="150" md="80" />
+
+      {/* {careerData[0].jobPostings && (
+        <Div className="col-lg-6 offset-xl-1">
+          <Accordion faqs={careerData.jobPostings} />
+        </Div>
+
+      )} */}
+
       <Div className="container pl-24 pr-24">
-        <SectionHeading
-          title="Why are we the best choice for you?"
-          subtitle="Our core values"
-          btnLink="/service"
-        />
-        <Spacing lg="85" md="40" />
-        <ServicesTable />
+        <h2 className="cs-font_50 cs-m0 text-left cs-line_height_4">
+          Job Openings
+        </h2>
+        <span
+          className="cs-font_20 cs-m0 text-left cs-line_height_4"
+          style={{
+            display: "block",
+            margin: "0 auto",
+            marginTop: "20px",
+            textAlign: "left",
+          }}
+        >
+          Join us at Caliber6 and be part of a dynamic team dedicated to
+          transforming businesses and driving success. Explore our career
+          opportunities and unleash your potential in an environment that values
+          creativity, collaboration, and continuous growth.
+        </span>
+
+        <Spacing lg="70" md="70" />
       </Div>
-      <Spacing lg="125" md="55" />
-      <Div className="container pl-24 ">
-        {reviewData && reviewData.length > 1 && (
-          <TestimonialSlider reviewData={reviewData} />
-        )}
+      <Spacing lg="130" md="70" />
+      <Div className="container pl-24 pr-24 w-full">
+        {careerData.length > 0 &&
+          careerData.map((career: any, index: any) => {
+            const jobPostingRelatedToCareerList = jobData.filter(
+              (job: any) => job.jobCareer._ref === career._id
+            );
+
+            return (
+              <Div key={index} className="col-lg-12 offset-xl-1 pr-24">
+                {jobPostingRelatedToCareerList.length > 0 && (
+                  <Div className="container mt-4">
+                    <Div className="row">
+                      <Div className="col-xl-5 col-lg-6">
+                        <SectionHeading
+                          title={career.careerName}
+                          subtitle="Job Post's"
+                          btnLink="/career"
+                        />
+                        <Spacing lg="90" md="45" />
+                      </Div>
+                      <Div className="col-lg-6 offset-xl-1">
+                        <JobAccordion faqs={jobPostingRelatedToCareerList} />
+                      </Div>
+                    </Div>
+                  </Div>
+                )}
+              </Div>
+            );
+          })}
       </Div>
+
       <Spacing lg="150" md="80" />
+
+      
       <Div className="container pl-24 pr-24">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"

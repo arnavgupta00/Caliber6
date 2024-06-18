@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         pageLinkText={serviceDetails.serviceName}
       />
       <Spacing lg="145" md="80" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24">
         <SectionHeading
           title={serviceDetails.serviceName}
           subtitle={serviceDetails.shortDescription}
@@ -68,7 +68,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         </Div>
       </Div>
       <Spacing lg="120" md="50" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24">
         <Div className="row align-items-center">
           <Div className="col-xl-5 col-lg-6">
             <Div className="cs-radius_15 cs-shine_hover_1">
@@ -125,7 +125,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <Spacing lg="150" md="80" />
       {/* <TestimonialSlider /> */}
       <Spacing lg="145" md="80" />
-      <Div className="container cs-shape_wrap_4">
+      <Div className="container cs-shape_wrap_4 pl-24 pr-24">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
@@ -145,7 +145,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         </Div>
       </Div>
       <Spacing lg="150" md="80" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"

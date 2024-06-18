@@ -114,16 +114,21 @@ export default function Header({ variant }: HeaderProps) {
                       </DropDown> */}
                     </li>
                     <li>
-                      <Link href="about" onClick={() => setMobileToggle(false)}>
+                      <Link href="/about" onClick={() => setMobileToggle(false)}>
                         About
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="career"
+                        href="/career"
                         onClick={() => setMobileToggle(false)}
                       >
                         Careers
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/industrial-blogs" onClick={() => setMobileToggle(false)}>
+                        Industrial Blogs
                       </Link>
                     </li>
                     {/* <li>

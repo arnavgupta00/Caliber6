@@ -29,14 +29,14 @@ interface RecentPostData {
 }
 
 export default function Sidebar(params :{tagdata: any}) {
-  console.log("params.tagdata", params.tagdata);
+  //console.log("params.tagdata", params.tagdata);
 
   const removeUndefined = (data: any) => {
     return data.filter((item: any) => item !== undefined);
   }
   const tagData = removeUndefined(params.tagdata);
 
-  console.log("params.tagdataU", tagData);
+  //console.log("params.tagdataU", tagData);
 
 
   // const tagData: Tag[] = [

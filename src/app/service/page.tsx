@@ -25,7 +25,7 @@ export default async function Page() {
     return url;
   }
 
-  console.log(serviceData);
+  //console.log(serviceData);
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
       {/* <PageHeading

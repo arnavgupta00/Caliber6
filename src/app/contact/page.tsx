@@ -14,7 +14,7 @@ export default function Page() {
         pageLinkText="Contact"
       />
       <Spacing lg="150" md="80" />
-      <Div className="container">
+      <Div className="container pl-24 pr-24">
         <Div className="row">
           <Div className="col-lg-6">
             <SectionHeading
@@ -41,7 +41,7 @@ explore how our tailored digital solutions can drive your success."
                 <Spacing lg="20" md="20" />
               </Div>
               <Div className="col-sm-6">
-                <label className="cs-primary_color">Project Type*</label>
+                <label className="cs-primary_color">Subject*</label>
                 <input type="text" className="cs-form_field" />
                 <Spacing lg="20" md="20" />
               </Div>
