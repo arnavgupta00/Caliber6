@@ -1,6 +1,6 @@
 import Div from "@/components/Div";
 import PageHeading from "@/components/PageHeading";
-import PostStyle2 from "@/components/Post/PostStyle2";
+import PostStyle2 from "@/components/Post/PostStyle2Blogs";
 import Sidebar from "@/components/Sidebar.jsx";
 import Spacing from "@/components/Spacing";
 import { getBlogs } from "@/utils/sanityActions";

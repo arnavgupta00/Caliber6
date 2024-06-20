@@ -9,9 +9,9 @@ import IconBox from "@/components/IconBox";
 import Accordion from "@/components/Accordion";
 import { getServiceByID, getServicesNameAndId } from "@/utils/sanityActions";
 import { urlFor } from "@/utils/configSanity";
+import FunFact2 from "@/components/FunFact/FunFact3";
 
-export const revalidate = 0; 
-
+export const revalidate = 0;
 
 export default async function Page({ params }: { params: { id: string } }) {
   const serviceDetails = await getServiceByID(params.id);
@@ -24,6 +24,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     return url;
   };
 
+  const funfaceData = serviceDetails.factDetail;
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
       <PageHeading
@@ -32,14 +33,28 @@ export default async function Page({ params }: { params: { id: string } }) {
         pageLinkText={serviceDetails.serviceName}
       />
       <Spacing lg="145" md="80" />
-      <Div className="container pl-24 pr-24">
-        <SectionHeading
-          title={serviceDetails.serviceName}
-          subtitle={serviceDetails.shortDescription}
-          variant="cs-style1 text-center"
-          btnLink={"/service/" + serviceDetails._id}
-        />
-        <Spacing lg="90" md="45" />
+      <Div className="container  pl-24 pr-24 ">
+        <Div className="row">
+          <Div className="col-lg-8 w-3/6">
+            <SectionHeading
+              title={serviceDetails.serviceName}
+              subtitle={serviceDetails.shortDescription}
+              variant="cs-style1 text-center"
+              btnLink={"/service/" + serviceDetails._id}
+              className="text-left"
+            />
+          </Div>
+          
+          <Div className="container flex flex-row justify-center items-center col-lg-4 w-3/6 pt-24">
+            {funfaceData[0] && funfaceData[1] && <FunFact2
+              data={funfaceData}
+              variant="cs-type1"
+              bgUrl="/images/funfact_shape_bg.svg"
+            />}
+          </Div>
+        </Div>
+        <Spacing lg="145" md="80" />
+
         <Div className="row">
           <Div className="col-lg-4">
             <IconBox

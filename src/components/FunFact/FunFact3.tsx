@@ -4,7 +4,7 @@ import Div from "../Div";
 interface FunFactItem {
   factNumber: string;
   title: string;
-  description: string;
+  description?: string;
 }
 
 interface FunFact2Props {
@@ -16,7 +16,7 @@ interface FunFact2Props {
 export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
   return (
     <Div
-      className={variant ? `cs-funfact_wrap_2 ${variant}  w-11/12` : "cs-funfact_wrap_2  w-11/12"}
+      className={variant ? `cs-funfact_wrap_2 container flex flex-row justify-center items-center ${variant}  ` : "cs-funfact_wrap_2 container flex flex-row justify-center items-center "}
     >
       {bgUrl && (
         <div
@@ -26,7 +26,7 @@ export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
       )}
       <Div className="cs-funfacts">
         {data.map((item, index) => (
-          <Div key={index} className="w-3/12">
+          <Div key={index} className="w-5/12">
             <Div className="cs-funfact cs-style2">
               <Div className="cs-funfact_number cs-primary_font cs-semi_bold cs-primary_color">
                 <span className="odometer" />
@@ -34,7 +34,7 @@ export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
                 <span className="cs-plus"></span>
               </Div>
               <h3 className="cs-funfact_title">{item.title}</h3>
-              <Div className="cs-hero_subtitle mt-4 text-sm text-justify">{item.description}</Div>
+              {/* <Div className="cs-hero_subtitle mt-4 text-sm">{item.description}</Div> */}
             </Div>
           </Div>
         ))}

@@ -2,7 +2,6 @@ import Link from "next/link";
 import Button from "../Button";
 import Div from "../Div";
 import { urlFor } from "@/utils/configSanity";
-import Spacing from "../Spacing";
 
 interface PostStyle2Props {
   thumb: any;
@@ -35,11 +34,10 @@ export default async function PostStyle2({
   if (!MainImageUrl) return null;
   if (href === "undefined") return null;
   return (
-    <Div className="cs-post cs-style2 w-full flex-row gap-8" style={{display:"flex" }}>
+    <Div className="cs-post cs-style2" style={{ flexDirection: "row" }}>
       <Link
-        href={"/industrial-blogs/" + href}
-        className="cs-post_thumb cs-radius_15 "
-        style={{minWidth:"60%"}}
+        href={"/blog/" + href}
+        className="cs-post_thumb cs-radius_15"
       >
         <img src={MainImageUrl} alt="Post" className="w-100 cs-radius_15" />
       </Link>
@@ -49,21 +47,20 @@ export default async function PostStyle2({
             {new Date(date).toLocaleDateString()}
           </span>
           <Link
-            href={"/industrial-blogs/" + categoryHref}
+            href={"/blog/" + categoryHref}
             className="cs-post_avatar"
           >
             {category}
           </Link>
         </Div>
         <h2 className="cs-post_title">
-          <Link href={"/industrial-blogs/" + href}>{title}</Link>
+          <Link href={"/blog/" + href}>{title}</Link>
         </h2>
         <h3 className="cs-funfact_title">{subtitle.heading}</h3>
         <Div className="cs-hero_subtitle mt-4 text-sm">
-        {subtitle.paragraphs.join(' ').slice(0, 350) + " ..."}
+          {subtitle.paragraphs}
         </Div>
-        <Spacing lg="25" md="80" />
-        <Button btnLink={"/industrial-blogs/" + href} btnText="See More" />
+        <Button btnLink={"/blog/" + href} btnText="See More" />
       </Div>
     </Div>
   );

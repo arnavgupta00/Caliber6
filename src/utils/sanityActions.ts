@@ -21,7 +21,7 @@ export async function getClientReviews() {
 }
 
 export async function getServicesNameAndShortDescription() {
-  const query = `*[_type == "service" && !(_id in path("drafts.**"))] | order(_createdAt desc) {serviceName, shortDescription , serviceImage , _id}`;
+  const query = `*[_type == "service" && !(_id in path("drafts.**"))] | order(_createdAt desc) {serviceName, shortDescription , serviceImage , _id}[0...3]`;
   const data = await sanityClient.fetch(query);
   return data;
 }

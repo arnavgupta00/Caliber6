@@ -27,7 +27,7 @@ const PricingTable: React.FC<PricingTableProps> = ({
   return (
     <Div className="cs-pricing_table cs-style1" style={{minHeight:"100%"}}>
       <h2 className="cs-pricing_title">{title}</h2>
-      <h3 className="cs-section_subtitle text-lg mt-4">{subtitle}</h3>
+      <h3 className="cs-section_subtitle text-lg mt-4 text-justify">{subtitle}</h3>
       {/* <Div className="cs-pricing_info">
         <Div className="cs-price">
           <h3 className="cs-white_color">

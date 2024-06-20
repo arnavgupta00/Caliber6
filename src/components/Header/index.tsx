@@ -7,7 +7,9 @@ import ContactInfoWidget from "../Widget/ContactInfoWidget";
 import Div from "../Div";
 import DropDown from "./DropDown";
 import Link from "next/link";
-
+import { Icon } from "@iconify/react/dist/iconify.js";
+import Spacing from "../Spacing";
+import { X } from "lucide-react";
 interface HeaderProps {
   variant?: string;
 }
@@ -16,7 +18,7 @@ export default function Header({ variant }: HeaderProps) {
   const [isSticky, setIsSticky] = useState(false);
   const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
-
+  const [loginMenuShow, setLoginMenuShow] = useState(true);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 0) {
@@ -27,6 +29,32 @@ export default function Header({ variant }: HeaderProps) {
     });
   }, []);
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    //await sendEmail(formData.email, formData.subject, formData.description  , formData.fullName, formData.mobile)
+    setFormData({
+      fullName: "",
+      email: "",
+      password: "",
+    });
+    setLoginMenuShow(false);
+  };
   return (
     <>
       <header
@@ -114,7 +142,10 @@ export default function Header({ variant }: HeaderProps) {
                       </DropDown> */}
                     </li>
                     <li>
-                      <Link href="/about" onClick={() => setMobileToggle(false)}>
+                      <Link
+                        href="/about"
+                        onClick={() => setMobileToggle(false)}
+                      >
                         About
                       </Link>
                     </li>
@@ -127,7 +158,10 @@ export default function Header({ variant }: HeaderProps) {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/industrial-blogs" onClick={() => setMobileToggle(false)}>
+                      <Link
+                        href="/industrial-blogs"
+                        onClick={() => setMobileToggle(false)}
+                      >
                         Industrial Blogs
                       </Link>
                     </li>
@@ -266,6 +300,14 @@ export default function Header({ variant }: HeaderProps) {
                         </ul>
                       </DropDown>
                     </li> */}
+                    <li>
+                      <Link
+                        href="/contact"
+                        onClick={() => setMobileToggle(false)}
+                      >
+                        Contact
+                      </Link>
+                    </li>
                   </ul>
                   <span
                     className={
@@ -283,7 +325,7 @@ export default function Header({ variant }: HeaderProps) {
                 <Div className="cs-toolbox">
                   <span
                     className="cs-icon_btn"
-                    onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
+                    onClick={() => setLoginMenuShow(true)}
                   >
                     <span className="cs-icon_btn_in">
                       <span />
@@ -322,21 +364,110 @@ export default function Header({ variant }: HeaderProps) {
               Do you have a project in your <br /> mind? Keep connect us.
             </h2>
           </Div>
-          <Div className="cs-side_header_box">
+          {/* <Div className="cs-side_header_box">
             <ContactInfoWidget title="Contact Us" withIcon />
-          </Div>
-          <Div className="cs-side_header_box">
+          </Div> */}
+          {/* <Div className="cs-side_header_box">
             <Newsletter
               title="Subscribe"
               subtitle="At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit."
               placeholder="example@gmail.com"
             />
-          </Div>
+          </Div> */}
           <Div className="cs-side_header_box">
             <SocialWidget />
           </Div>
         </Div>
       </Div>
+      {loginMenuShow && (
+        <Div
+          className="absolute min-w-screen min-h-screen  container flex  justify-center items-center "
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            minHeight: "100vh",
+            zIndex: 999,
+            minWidth: "100vw",
+            backgroundColor: "rgba(0,0,0,0.5)",
+          }}
+        >
+          <X
+            className="text-white absolute"
+            onClick={() => {
+              setLoginMenuShow(false);
+            }}
+            style={{ fontSize: "2rem", top: "10%", left: "90%" }}
+          />
+
+          <Div
+            className="  p-8  flex  justify-center items-center rounded-3xl 	"
+            style={{
+              opacity: 1,
+              backgroundColor: "rgb(24,24,24)",
+              width: "400px",
+            }}
+          >
+
+            <form action="#" className="row" onSubmit={handleSubmit}>
+            <Div className="cs-side_header_shape" />
+
+              <h2
+                className="cs-side_header_heading col-sm-12"
+                style={{
+                  alignSelf: "center",
+                }}
+              >
+                Login / SignUp
+              </h2>
+              <hr className="border-1 border-gray-50 pb-8" />
+              <Div className="col-sm-12  ">
+                <label className="cs-primary_color">Full Name*</label>
+                <input
+                  type="text"
+                  className="cs-form_field"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                />
+                <Spacing lg="20" md="20" />
+              </Div>
+              <Div className="col-sm-12">
+                <label className="cs-primary_color">Email*</label>
+                <input
+                  type="text"
+                  className="cs-form_field"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                <Spacing lg="20" md="20" />
+              </Div>
+
+              <Div className="col-sm-12">
+                <label className="cs-primary_color">Password*</label>
+                <input
+                  type="password"
+                  className="cs-form_field"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                <Spacing lg="20" md="20" />
+              </Div>
+
+              <Div className="col-sm-12">
+                <button type="submit" className="cs-btn cs-style1">
+                  <span>Login / SignUp</span>
+                  <Icon icon="bi:arrow-right" />
+                </button>
+              </Div>
+            </form>
+          </Div>
+
+          <Div className="cs-side_header_shape" />
+        </Div>
+      )}
     </>
   );
 }

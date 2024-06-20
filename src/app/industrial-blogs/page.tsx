@@ -38,7 +38,7 @@ export default async function Page() {
       <Spacing lg="130" md="70" />
       <Div className="container pl-24 pr-24" >
         <Div className="row">
-          <Div className="col-lg-8">
+          <Div className="col-lg-12">
             {blogs.map((item: { mainImage: any; title: string; content: { heading: string; _key: string; paragraphs: any; }[]; _createdAt: string; category: string; _id: string; }, index: any) => {
               //console.log(item);
                             
@@ -67,10 +67,10 @@ export default async function Page() {
             <Spacing lg="60" md="40" />
             {/* <Pagination /> */}
           </Div>
-          <Div className="col-xl-3 col-lg-4 offset-xl-1">
+          {/* <Div className="col-xl-3 col-lg-4 offset-xl-1">
             <Spacing lg="0" md="80" />
             <Sidebar tagdata={tags} />
-          </Div>
+          </Div> */}
         </Div>
       </Div>
     </>

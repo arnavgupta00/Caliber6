@@ -70,15 +70,19 @@ export default function ServiceList(serviceDataProp: any) {
                   <Div className="cs-iconbox_subtitle">
                     {item.shortDescription}
                   </Div>
-                  <>
+                  {/* <>
                     <Spacing lg="30" md="20" />
                     <Button btnLink={"/service/" + item._id} btnText="Learn More" />
-                  </>
+                  </> */}
                 </Div>
               </>
             </Link>
           </Div>
         ))}
+      <Div>
+        <Spacing lg="30" md="20" />
+        <Button btnLink={"/service"} btnText="See More" />
+      </Div>
     </Div>
   );
 }

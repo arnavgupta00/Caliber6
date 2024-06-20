@@ -82,5 +82,28 @@ export default {
       ],
       description: 'Common questions and answers related to the service',
     },
+    {
+      title: 'Fact Detail',
+      name: 'factDetail',
+      type: 'array',
+      of: [
+      {type: 'object',
+      fields: [
+        {
+          title: 'Title',
+          name: 'title',
+          type: 'string',
+          description: 'Title for the fact detail section',
+        },
+        {
+          title: 'Fact Number',
+          name: 'factNumber',
+          type: 'string',
+          description: 'The fact number, e.g., "3x" or "40%"',
+        },
+      ],
+    }],
+      description: 'Detailed fact information about the service',
+    },
   ],
 };

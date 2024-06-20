@@ -11,6 +11,7 @@ interface SectionHeadingProps {
   btnText?: string;
   variant?: string;
   children?: ReactNode;
+  className?: string;
 }
 
 export default function SectionHeading({
@@ -20,17 +21,19 @@ export default function SectionHeading({
   btnText,
   variant,
   children,
+  className,
 }: SectionHeadingProps) {
   return (
     <Div
       className={
         variant
-          ? `cs-section_heading ${variant}`
-          : `cs-section_heading cs-style1`
+          ? `cs-section_heading ${variant}  `
+          : `cs-section_heading cs-style1   `
+        
       }
     >
-      <h2 className="cs-section_title">{parse(title)}</h2>
-      <h3 className="cs-section_subtitle" style={{ marginTop: "20px" }}>
+      <h2 className={`cs-section_title  ${className ? className : ""}`}>{parse(title)}</h2>
+      <h3 className={`cs-section_subtitle  ${className ? className : ""}`} style={{ marginTop: "20px" }}>
         {parse(subtitle)}
       </h3>
 
