@@ -23,7 +23,7 @@ export default function Portfolio2({
 }: PortfolioProps) {
   const [hovered, setHovered] = useState(false);
   return (
-    <Div className="cs-portfolio cs-style2 pl-24 pr-24">
+    <Div className="cs-portfolio cs-style2 lg:pl-24 lg:pr-24">
       <Div className="cs-gradient_shape" />
       <Div className="container">
         <Div className="row align-items-center">

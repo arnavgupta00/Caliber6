@@ -34,7 +34,7 @@ export default async function Page() {
         pageLinkText="Services"
       /> */}
       <Spacing lg="150" md="80" />
-      <Div className="cs-shape_wrap_4 pl-24 pr-24">
+      <Div className="cs-shape_wrap_4 p-4 lg:p-0">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
@@ -134,7 +134,7 @@ export default async function Page() {
         </Div>
       </Div>
       <Spacing lg="150" md="80" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <SectionHeading
           title="Why are we the best choice for you?"
           subtitle="Our core values"
@@ -150,7 +150,7 @@ export default async function Page() {
       )}
       </Div>
       <Spacing lg="150" md="80" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"

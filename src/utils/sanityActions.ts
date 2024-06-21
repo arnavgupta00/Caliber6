@@ -90,3 +90,9 @@ export async function getIndustrialBlogsByCategory(category: string) {
   const data = await sanityClient.fetch(query);
   return data;
 }
+
+export async function getIndustrialBlogHomePage() {
+  const query = `*[_type == "industrialBlogPost"] | order(_createdAt desc) {title, _id , mainImage ,_createdAt, date }[0...5]`;
+  const data = await sanityClient.fetch(query);
+  return data;
+}

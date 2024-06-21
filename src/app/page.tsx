@@ -11,10 +11,14 @@ import type { Metadata } from "next";
 import ServiceList from "@/components/ServiceList";
 import {
   getClientReviews,
+  getIndustrialBlogHomePage,
   getServicesNameAndShortDescription,
 } from "@/utils/sanityActions";
 import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import Cta from "@/components/Cta";
+import MovingText from "@/components/MovingText";
+import blogPost from "../../sanity/schemaTypes/blogPost";
+import { urlFor } from "@/utils/configSanity";
 
 export const metadata: Metadata = {
   title: "Caliber6",
@@ -23,6 +27,72 @@ export const metadata: Metadata = {
 export const revalidate = 0;
 
 export default async function Home() {
+
+  const partnerLogos = [
+    {
+      src: "/images/partner_1.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_2.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_3.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_4.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_5.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_1.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_2.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_3.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_4.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_5.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_1.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_2.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_3.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_4.svg",
+      alt: "Partner",
+    },
+    {
+      src: "/images/partner_5.svg",
+      alt: "Partner",
+    },
+    
+    
+  ]
+
   const heroSocialLinks = [
     {
       name: "Linkedin",
@@ -84,8 +154,29 @@ export default async function Home() {
     (service: any) => service !== undefined
   );
 
+  const IndustrialBlogData = await getIndustrialBlogHomePage();
+
+  const imageUrlFromAsset = (asset: any) => {
+    const url = urlFor(asset).width(424).height(500).url();
+
+    return url;
+  };
+
+  const IndustrialBlogListWithImage = IndustrialBlogData.map(
+    (blog: any, index: number) => {
+      return {
+        url: `/industrial-blogs/${blog._id}`,
+        src: imageUrlFromAsset(blog.mainImage.asset),
+        alt: blog.mainImage.alt,
+        date: new Date(blog._createdAt).toLocaleDateString(),
+        title: blog.title,
+      };
+    }
+  );
+
+
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
+    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0 ">
       {/* Start Hero Section */}
       <Hero
         title={`Empowering Businesses Through Strategic <br /> <span>Digital Solutions</span>`}
@@ -95,6 +186,7 @@ export default async function Home() {
         heroSocialLinks={heroSocialLinks}
         phoneNumber="+1(646)494-6771"
         email="info@caliber6.com"
+        
       />
 
       {/* End Hero Section */}
@@ -141,7 +233,7 @@ export default async function Home() {
       {/* Start Services Section */}
       <Spacing lg="130" md="70" />
       {/* Start About Section */}
-      <Div className="cs-shape_wrap_4 pl-24 pr-24">
+      <Div className="cs-shape_wrap_4 p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
@@ -172,12 +264,12 @@ export default async function Home() {
       {/* End About Section */}
       {/* End Services Section */}
       {/* Start Video Block Section */}
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <ServiceList serviceDataProp={serviceDataProp} />
       </Div>
 
       <Spacing lg="130" md="70" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0  lg:pl-24 lg:pr-24">
         <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
           Our Expertise: <span> Your Business Potential</span>
         </h2>
@@ -202,7 +294,7 @@ export default async function Home() {
 
       {/* Start Blog Section */}
       <Spacing lg="150" md="80" />
-      <Div className="cs-shape_wrap_4 w-full pl-24 pr-24">
+      <Div className="cs-shape_wrap_4 w-full p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
@@ -210,15 +302,15 @@ export default async function Home() {
             <Div className="col-xl-4 ">
               <SectionHeading
                 title="Explore recent publication"
-                subtitle="Our Blog"
-                btnText="View More Blog"
-                btnLink="/blog"
+                subtitle="Our Industrial Blog"
+                btnText="View More Industrial Blog"
+                btnLink="/industrial-blogs"
               />
               <Spacing lg="90" md="45" />
             </Div>
             <Div className="col-xl-7 offset-xl-1">
               <Div className="cs-half_of_full_width">
-                <PostSlider />
+                <PostSlider postDataProp={IndustrialBlogListWithImage} />
               </Div>
             </Div>
           </Div>
@@ -227,15 +319,15 @@ export default async function Home() {
       {/* End Blog Section */}
       <Spacing lg="130" md="70" />
       <Div className="container row ">
-      {reviewData && reviewData.length > 1 && (
-        <TestimonialSlider reviewData={reviewData} />
-      )}
+        {reviewData && reviewData.length > 1 && (
+          <TestimonialSlider reviewData={reviewData} />
+        )}
       </Div>
       {/* Start award Section */}
       <Spacing lg="130" md="70" />
 
       {/* Start award Section */}
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <Div className="row align-items-center cs-column_reverse_lg">
           <Div className="col-lg-5">
             <Div className="cs-radius_15 cs-shine_hover_1">
@@ -261,8 +353,21 @@ At Caliber6, we understand that every organization is unique. Our team of expert
       {/* End About Section */}
       <Spacing lg="150" md="80" />
 
+      <Div className="container">
+        <SectionHeading
+          title="Companies we have worked with"
+          subtitle=""
+          variant="cs-style1 text-center"
+          btnLink="/"
+        />
+      </Div>
+      <Spacing lg="70" md="70" />
+
+      <MovingText logoList={partnerLogos} />
+      <Spacing lg="105" md="70" />
+
       {/* Start CTA Section */}
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"

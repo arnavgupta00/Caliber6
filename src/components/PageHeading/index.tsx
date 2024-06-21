@@ -11,7 +11,7 @@ export default function PageHeading({ title, bgSrc, pageLinkText }: PageHeadingP
   return (
     <Div
       className="cs-page_heading cs-style1 cs-center text-center cs-bg w-full"
-      style={{ backgroundImage: `url(${bgSrc})` }}
+      style={{ backgroundImage: `url(${bgSrc})` , width:"100vw" , padding:"0px" }}
     >
       <Div className="container">
         <Div className="cs-page_heading_in">

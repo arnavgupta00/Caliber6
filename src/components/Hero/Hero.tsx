@@ -24,16 +24,16 @@ const Hero: React.FC<Hero4Props> = ({
 }) => {
   return (
     <Div
-      className="cs-hero cs-style1 cs-type1 text-center cs-fixed_bg w-full"
+      className="cs-hero cs-style1 cs-type1 text-center cs-fixed_bg w-full  "
       style={{ backgroundImage: "url(./images/hero_bg_2.jpeg)", width: "100vw" }}
     >
       <Div className="container w-full">
         <Div className="cs-hero_text w-full">
-          <h1 className="cs-hero_title" style={{ fontSize: "75px" }}>
+          <h1 className="cs-hero_title " style={{ fontSize: "clamp(55px, 10vw, 75px)" }}>
             {parse(title)}
           </h1>
           <Div className="cs-hero_info justify-content-center w-full">
-            <Div className="cs-hero_subtitle w-full" style={{width:"100vw"}}>{parse(subtitle)}</Div>
+            <Div className="cs-hero_subtitle w-full " style={{width:"95vw" , fontSize: "clamp(20px, 10vw, 5px)"}}>{parse(subtitle)}</Div>
           </Div>
         </Div>
       </Div>

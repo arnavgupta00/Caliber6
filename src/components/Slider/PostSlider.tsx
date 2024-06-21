@@ -12,51 +12,8 @@ interface PostData {
   title: string;
 }
 
-export default function PostSlider() {
-  const postData: PostData[] = [
-    {
-      url:'/blog/blog-details', 
-      src:'/images/post_1.jpeg', 
-      alt:'Post', 
-      date:'07 Mar 2022', 
-      title:'How to keep fear from ruining your art business with confident'
-    },
-    {
-      url:'/blog/blog-details', 
-      src:'/images/post_2.jpeg', 
-      alt:'Post', 
-      date:'10 Feb 2022',
-      title:'Artistic mind will be great for creation anything'
-    },
-    {
-      url:'/blog/blog-details', 
-      src:'/images/post_3.jpeg', 
-      alt:'Post', 
-      date:'05 Mar 2022',
-      title:'A.I will take over all job for human within next year'
-    },
-    {
-      url:'/blog/blog-details', 
-      src:'/images/post_1.jpeg', 
-      alt:'Post', 
-      date:'07 Mar 2022', 
-      title:'How to keep fear from ruining your art business with confident'
-    },
-    {
-      url:'/blog/blog-details', 
-      src:'/images/post_2.jpeg', 
-      alt:'Post', 
-      date:'10 Feb 2022',
-      title:'Artistic mind will be great for creation anything'
-    },
-    {
-      url:'/blog/blog-details', 
-      src:'/images/post_3.jpeg', 
-      alt:'Post', 
-      date:'05 Mar 2022',
-      title:'A.I will take over all job for human within next year'
-    }
-  ];
+export default function PostSlider({postDataProp}: {postDataProp: any}) {
+  const postData: any = postDataProp;
 
   const settings = {
     dots: false,
@@ -97,7 +54,7 @@ export default function PostSlider() {
 
   return (
     <Slider {...settings} className='cs-gap-24'>
-      {postData.map((item, index) => (
+      {postData.map((item:any, index:any) => (
         <Div key={index}>
           <Post 
             url={item.url}

@@ -38,7 +38,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="cs-fooer pl-24 pr-24" >
+    <footer className="cs-fooer p-4 lg:p-0 lg:pl-24 lg:pr-24" >
       <Div className="cs-fooer_main">
         <Div className="container">
           <Div className="row">

@@ -21,14 +21,14 @@ export default async function Page() {
   const tags = Array.from(new Set(tagsExtractFromAllBlogs.flat())) as Key[];
 
   return (
-    <>
+    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
       <PageHeading
         title="Our Blog"
         bgSrc="/images/blog_hero_bg.jpeg"
         pageLinkText="Blog"
       />
       <Spacing lg="150" md="80" />
-      <Div className="container pl-24 pr-24" >
+      <Div className="container p-4 lg:p-0" >
         <Div className="row">
           <Div className="col-lg-8">
             {blogs.map((item: { mainImage: any; title: string; content: { heading: string; _key: string; paragraphs: any; }[]; _createdAt: string; category: string; _id: string; }, index: any) => {
@@ -65,6 +65,6 @@ export default async function Page() {
           </Div>
         </Div>
       </Div>
-    </>
+    </main>
   );
 }

@@ -79,7 +79,7 @@ export default function Page() {
       {/* End Page Heading Section */}
       {/* Start About Section */}
       <Spacing lg="150" md="80" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <Div className="row">
           <Div className="col-xl-5 col-lg-7">
             <SectionHeading
@@ -127,7 +127,7 @@ export default function Page() {
       </Div>
       <Spacing lg="75" md="55" />
       {/* End About Section */}
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <FunFact
           title="Key Achievements"
           subtitle="10 years of excellence, 100+ partnerships, 20% cost reductions, and 3x ROI. Let's elevate your business together."
@@ -137,7 +137,7 @@ export default function Page() {
       {/* End Fun Fact Section */}
       {/* Start Why Choose Section */}
       <Spacing lg="100" md="80" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-24 lg:pr-24">
         <Div className="row">
           <Div className="col-xl-5 col-lg-6">
             <Div className="cs-image_layer cs-style1">
@@ -210,7 +210,7 @@ export default function Page() {
       )}
       {/* End Portfolio Section */}
       {/* Start Pricing Section */}
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0 lg:pl-20 lg:pr-20">
         <SectionHeading title="Our Core Values" subtitle="" btnLink="/about" />
         <Spacing lg="50" md="40" />
         <PricingTableList />
@@ -218,7 +218,7 @@ export default function Page() {
       {/* <Spacing lg="125" md="55" /> */}
       <Spacing lg="130" md="70" />
 
-        <Div className="container text-center">
+        <Div className="container text-left lg:text-center p-4">
           <Div className="row col-lg-10 offset-lg-1">
             <h2 className="cs-font_38 cs-m0">
               Streamline Your Business to Achieve Success
@@ -247,7 +247,7 @@ export default function Page() {
         </Div>
         {/* Start CTA Section */}
         <Spacing lg="120" md="80" />
-        <Div className="container pl-24 pr-24">
+        <Div className="container p-4 lg:p-0  lg:pl-24 lg:pr-24">
           <Cta
             title="Let’s disscuse make <br />something <i>cool</i> together"
             btnText="Apply For Meeting"

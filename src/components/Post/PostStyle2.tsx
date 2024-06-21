@@ -35,7 +35,7 @@ export default async function PostStyle2({
   if (!MainImageUrl) return null;
   if (href === "undefined") return null;
   return (
-    <Div className="cs-post cs-style2 w-full flex-row gap-8" style={{display:"flex" }}>
+    <Div className="cs-post cs-style2 w-full flex-col lg:flex-row gap-8" style={{display:"flex" }}>
       <Link
         href={"/industrial-blogs/" + href}
         className="cs-post_thumb cs-radius_15 "

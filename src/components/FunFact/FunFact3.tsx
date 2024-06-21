@@ -16,7 +16,7 @@ interface FunFact2Props {
 export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
   return (
     <Div
-      className={variant ? `cs-funfact_wrap_2 container flex flex-row justify-center items-center ${variant}  ` : "cs-funfact_wrap_2 container flex flex-row justify-center items-center "}
+      className={variant ? `cs-funfact_wrap_2  container flex flex-row justify-center items-center ${variant}  ` : "cs-funfact_wrap_2 container flex flex-row justify-center items-center "}
     >
       {bgUrl && (
         <div
@@ -24,9 +24,9 @@ export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
           style={{ backgroundImage: `url(${bgUrl})` }}
         ></div>
       )}
-      <Div className="cs-funfacts">
+      <Div className="cs-funfacts w-full">
         {data.map((item, index) => (
-          <Div key={index} className="w-5/12">
+          <Div key={index} className="w-full lg:w-5/12">
             <Div className="cs-funfact cs-style2">
               <Div className="cs-funfact_number cs-primary_font cs-semi_bold cs-primary_color">
                 <span className="odometer" />

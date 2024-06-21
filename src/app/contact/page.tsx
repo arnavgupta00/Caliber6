@@ -45,7 +45,7 @@ export default function Page() {
         pageLinkText="Contact"
       />
       <Spacing lg="150" md="80" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <Div className="row">
           <Div className="col-lg-6">
             <SectionHeading

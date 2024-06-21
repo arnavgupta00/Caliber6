@@ -24,7 +24,7 @@ export default function Accordion(faqs:{faqs:AccordionData[]}) {
   return (
     <Div className="cs-accordians cs-style1">
       {accordionData.map((item, index) => (
-        <Div className={`cs-accordian ${selected === index ? 'active' : ''}`} key={index}>
+        <Div className={`cs-accordian border-0 ${selected === index ? 'active' : ''}`} key={index}>
           <Div className="cs-accordian_head" onClick={() => handelToggle(index)}>
             <h2 className="cs-accordian_title">{item.question}</h2>
             <span className="cs-accordian_toggle cs-accent_color">

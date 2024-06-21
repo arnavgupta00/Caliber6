@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     null;
 
   return (
-    <>
+    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0">
       {/* Start Page Heading Section */}
       <PageHeading
         title={blog.title}
@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
       {/* Start Blog Details */}
       <Spacing lg="150" md="80" />
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <Div className="row">
           <Div className="col-lg-8">
             {/* Start Details Post Content */}
@@ -145,7 +145,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             {/* End Details Post Content */}
 
             {/* Start Comment Section */}
-            <Spacing lg="30" md="30" />
+            {/* <Spacing lg="30" md="30" />
             <h2 className="cs-font_50 cs-m0">Leave A Reply</h2>
             <Spacing lg="5" md="5" />
             <p className="cs-m0">
@@ -189,7 +189,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                   <Icon icon="bi:arrow-right" />
                 </button>
               </Div>
-            </form>
+            </form> */}
             {/* End Comment Section */}
           </Div>
           <Div className="col-xl-3 col-lg-4 offset-xl-1">
@@ -203,7 +203,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <Spacing lg="150" md="80" />
       {/* Start Blog Details */}
       {/* Start CTA Section */}
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"
@@ -212,6 +212,6 @@ export default async function Page({ params }: { params: { id: string } }) {
         />
       </Div>
       {/* End CTA Section */}
-    </>
+    </main>
   );
 }

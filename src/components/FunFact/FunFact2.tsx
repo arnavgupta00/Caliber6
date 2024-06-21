@@ -26,7 +26,7 @@ export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
       )}
       <Div className="cs-funfacts">
         {data.map((item, index) => (
-          <Div key={index} className="w-3/12">
+          <Div key={index} className="lg:w-3/12">
             <Div className="cs-funfact cs-style2">
               <Div className="cs-funfact_number cs-primary_font cs-semi_bold cs-primary_color">
                 <span className="odometer" />
@@ -34,7 +34,7 @@ export default function FunFact2({ data, variant, bgUrl }: FunFact2Props) {
                 <span className="cs-plus"></span>
               </Div>
               <h3 className="cs-funfact_title">{item.title}</h3>
-              <Div className="cs-hero_subtitle mt-4 text-sm text-justify">{item.description}</Div>
+              <Div className="cs-hero_subtitle mt-4 text-sm text-left">{item.description}</Div>
             </Div>
           </Div>
         ))}

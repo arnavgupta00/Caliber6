@@ -25,18 +25,18 @@ export default async function Page() {
 
   return (
     <>
-      <PageHeading
+      {/* <PageHeading
         title="Indstrial Blogs"
         bgSrc="/images/blog_hero_bg.jpeg"
         pageLinkText="Blog"
-      />
+      /> */}
       <Spacing lg="150" md="80" />
 
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <CategoryWidget title='Categories' data={categories}/>
       </Div>
       <Spacing lg="130" md="70" />
-      <Div className="container pl-24 pr-24" >
+      <Div className="container p-4 lg:p-0" >
         <Div className="row">
           <Div className="col-lg-12">
             {blogs.map((item: { mainImage: any; title: string; content: { heading: string; _key: string; paragraphs: any; }[]; _createdAt: string; category: string; _id: string; }, index: any) => {

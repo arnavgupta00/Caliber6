@@ -27,10 +27,10 @@ export default function JobAccordion({ faqs }: AccordionProps) {
   }, [faqs]);
 
   return (
-    <Div className="cs-accordians cs-style1 m-4">
+    <Div className="cs-accordians cs-style1 ">
       {faqs.map((item, index) => (
         <Div
-          className={`cs-accordian ${selected === index ? 'active' : ''}`}
+          className={`cs-accordian border-0 ${selected === index ? 'active' : ''}`}
           key={index}
           style={{zIndex:-1}}
 

@@ -40,7 +40,7 @@ export default async function Page() {
         pageLinkText="Careers"
       />
       <Spacing lg="150" md="80" />
-      <Div className="cs-shape_wrap_4 pl-24 pr-24">
+      <Div className="cs-shape_wrap_4 p-4 lg:p-0">
         <Div className="cs-shape_4"></Div>
         <Div className="cs-shape_4"></Div>
         <Div className="container">
@@ -62,7 +62,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[0].careerName}
-                      link={"/service/" + careerData[0]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[0].careerImage.asset)}
                       alt={careerData[0].careerName + " Image"}
                     />
@@ -74,7 +74,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[1].careerName}
-                      link={"/service/" + careerData[1]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[1].careerImage.asset)}
                       alt={careerData[1].careerName + " Image"}
                     />
@@ -85,7 +85,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[2].careerName}
-                      link={"/service/" + careerData[2]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[2].careerImage.asset)}
                       alt={careerData[2].careerName + " Image"}
                     />
@@ -97,7 +97,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[3].careerName}
-                      link={"/service/" + careerData[3]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[3].careerImage.asset)}
                       alt={careerData[3].careerName + " Image"}
                     />
@@ -110,7 +110,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[4].careerName}
-                      link={"/service/" + careerData[4]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[4].careerImage.asset)}
                       alt={careerData[4].careerName + " Image"}
                     />
@@ -122,7 +122,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[5].careerName}
-                      link={"/service/" + careerData[5]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[5].careerImage.asset)}
                       alt={careerData[5].careerName + " Image"}
                     />
@@ -133,7 +133,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[6].careerName}
-                      link={"/service/" + careerData[6]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[6].careerImage.asset)}
                       alt={careerData[6].careerName + " Image"}
                     />
@@ -145,7 +145,7 @@ into the digital forefront."
                   <Div className="col-lg-3 col-sm-6">
                     <Card
                       title={careerData[7].careerName}
-                      link={"/service/" + careerData[7]._id}
+                      link="/career"
                       src={imageUrlFromAsset(careerData[7].careerImage.asset)}
                       alt={careerData[7].careerName + " Image"}
                     />
@@ -159,7 +159,7 @@ into the digital forefront."
       </Div>
       <Spacing lg="130" md="70" />
 
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <Div className="row align-items-center cs-column_reverse_lg">
           <Div className="col-lg-5">
             <Div className="cs-radius_15 cs-shine_hover_1">
@@ -187,7 +187,7 @@ everything we do."
       </Div>
       <Spacing lg="130" md="70" />
 
-      <Div className="container  pr-24">
+      <Div className="container p-4 lg:p-0  lg:pr-24">
         <Div
           className="row align-items-center cs-column_reverse_lg"
           style={{ flexDirection: "row-reverse", justifyContent: "center" }}
@@ -202,7 +202,7 @@ everything we do."
             </Div>
           </Div>
           <Div
-            className="col-lg-6 offset-lg-1 pr-24 "
+            className="col-lg-6 offset-lg-1 lg:pr-24 "
             style={{
               alignItems: "start",
               textAlign: "left",
@@ -233,7 +233,7 @@ collaboration, and continuous growth."
 
       )} */}
 
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <h2 className="cs-font_50 cs-m0 text-left cs-line_height_4">
           Job Openings
         </h2>
@@ -255,7 +255,7 @@ collaboration, and continuous growth."
         <Spacing lg="70" md="70" />
       </Div>
       <Spacing lg="130" md="70" />
-      <Div className="container pl-24 pr-24 w-full">
+      <Div className="container p-4 lg:p-0 w-full">
         {careerData.length > 0 &&
           careerData.map((career: any, index: any) => {
             const jobPostingRelatedToCareerList = jobData.filter(
@@ -263,7 +263,7 @@ collaboration, and continuous growth."
             );
 
             return (
-              <Div key={index} className="col-lg-12 offset-xl-1 pr-24">
+              <Div key={index} className="col-lg-12 offset-xl-0 ">
                 {jobPostingRelatedToCareerList.length > 0 && (
                   <Div className="container mt-4">
                     <Div className="row">
@@ -289,7 +289,7 @@ collaboration, and continuous growth."
       <Spacing lg="150" md="80" />
 
       
-      <Div className="container pl-24 pr-24">
+      <Div className="container p-4 lg:p-0">
         <Cta
           title="Let’s disscuse make <br />something <i>cool</i> together"
           btnText="Apply For Meeting"
