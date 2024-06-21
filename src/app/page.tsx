@@ -17,7 +17,6 @@ import {
 import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import Cta from "@/components/Cta";
 import MovingText from "@/components/MovingText";
-import blogPost from "../../sanity/schemaTypes/blogPost";
 import { urlFor } from "@/utils/configSanity";
 
 export const metadata: Metadata = {
