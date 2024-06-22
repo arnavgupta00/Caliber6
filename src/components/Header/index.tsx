@@ -308,6 +308,18 @@ export default function Header({ variant }: HeaderProps) {
                         Contact
                       </Link>
                     </li>
+                    {mobileToggle && (
+                      <li>
+                        <Link
+                          href="#"
+                          onClick={() => {
+                            setLoginMenuShow(!loginMenuShow);
+                          }}
+                        >
+                          Login / Signup
+                        </Link>
+                      </li>
+                    )}
                   </ul>
                   <span
                     className={
@@ -408,9 +420,8 @@ export default function Header({ variant }: HeaderProps) {
               width: "400px",
             }}
           >
-
             <form action="#" className="row" onSubmit={handleSubmit}>
-            <Div className="cs-side_header_shape" />
+              <Div className="cs-side_header_shape" />
 
               <h2
                 className="cs-side_header_heading col-sm-12"

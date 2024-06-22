@@ -9,8 +9,35 @@ import TestimonialSlider from "@/components/Slider/TestimonialSlider";
 import Spacing from "@/components/Spacing";
 import { urlFor } from "@/utils/configSanity";
 import { getClientReviews, getServicesNameAndImage } from "@/utils/sanityActions";
+import { Metadata } from "next";
 
 export const revalidate = 0; 
+
+export const metadata: Metadata = {
+  applicationName: "Caliber6 ",
+  title: {
+    default: "Services - Caliber6" ,
+    template: "Services - Caliber6",  // Set specific title for Services page
+  },
+  description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  openGraph: {
+    type: "website",
+    siteName: "Caliber6",
+    title: {
+      default: "Services - Caliber6",  // Specific title for Open Graph
+      template: "Services - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: "Services - Caliber6",  // Specific title for Twitter
+      template: "Services - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+};
 
 
 export default async function Page() {

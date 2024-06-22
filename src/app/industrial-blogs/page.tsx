@@ -8,9 +8,31 @@ import { getBlogs, getIndustrialBlogCategories, getIndustrialBlogs } from "@/uti
 import { Metadata } from "next";
 import { Key } from "react";
 
+
 export const metadata: Metadata = {
-  title: "Blog's",
-  description: "Still in development",
+  applicationName: "Caliber6 ",
+  title: {
+    default: "Industrial Blog's - Caliber6",
+    template: "Industrial Blog's - Caliber6",  // Set specific title for Industrial Blog's page
+  },
+  description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  openGraph: {
+    type: "website",
+    siteName: "Caliber6",
+    title: {
+      default: "Industrial Blog's - Caliber6",  // Specific title for Open Graph
+      template: "Industrial Blog's - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: "Industrial Blog's - Caliber6",  // Specific title for Twitter
+      template: "Industrial Blog's - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
 };
 
 export const revalidate = 0; 
@@ -64,7 +86,7 @@ export default async function Page() {
                 </Div>
               );
             })}
-            <Spacing lg="60" md="40" />
+            {/* <Spacing lg="60" md="40" /> */}
             {/* <Pagination /> */}
           </Div>
           {/* <Div className="col-xl-3 col-lg-4 offset-xl-1">

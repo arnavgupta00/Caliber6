@@ -7,6 +7,33 @@ import Portfolio3 from "@/components/Portfolio/Portfolio3";
 import PricingTableList from "@/components/PricingTable/PricingTableList";
 import SectionHeading from "@/components/SectionHeading";
 import Spacing from "@/components/Spacing";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  applicationName: "Caliber6",
+  title: {
+    default: "About Us - Caliber6",
+    template: "About Us - Caliber6",  // Set specific title for About Us page
+  },
+  description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  openGraph: {
+    type: "website",
+    siteName: "Caliber6",
+    title: {
+      default: "About Us - Caliber6",  // Specific title for Open Graph
+      template: "About Us - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: "About Us - Caliber6",  // Specific title for Twitter
+      template: "About Us - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+};
 
 export default function Page() {
   const portfolioData = [

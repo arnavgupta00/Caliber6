@@ -8,24 +8,58 @@ import { getBlogByID } from "@/utils/sanityActions";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  var blog = await getBlogByID(params.id);
+  var blog = blog[0];
+  const MainImageUrl =
+    (blog.mainImage &&
+      blog.mainImage.asset &&
+      urlFor(blog.mainImage.asset).width(872).height(500).url()) ||
+    null;
 
+  return {
+    title: `${blog.title} - Caliber6`,
+    description:
+      blog.description ||
+      "Empowering Businesses Through Strategic Digital Solutions",
+    openGraph: {
+      title: `${blog.title} - Caliber6`,
+      description:
+        blog.description ||
+        "Empowering Businesses Through Strategic Digital Solutions",
+      images: [{ url: MainImageUrl }],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} - Caliber6`,
+      description:
+        blog.description ||
+        "Empowering Businesses Through Strategic Digital Solutions",
+      images: [{ url: MainImageUrl }],
+    },
+  };
+}
 
 export default async function Page({ params }: { params: { id: string } }) {
   var blog = await getBlogByID(params.id);
   var blog = blog[0];
- // console.log("=====================", blog, "=====================", params.id);
+  // console.log("=====================", blog, "=====================", params.id);
 
   const MainImageUrl =
-    (blog.mainImage && blog.mainImage.asset &&
+    (blog.mainImage &&
+      blog.mainImage.asset &&
       urlFor(blog.mainImage.asset).width(872).height(500).url()) ||
     null;
 
   const SecondaryImageOne =
-    (blog.secondaryImages[0] && blog.secondaryImages[0].asset &&
+    (blog.secondaryImages[0] &&
+      blog.secondaryImages[0].asset &&
       urlFor(blog.secondaryImages[0].asset).width(424).height(424).url()) ||
     null;
   const SecondaryImageTwo =
-    (blog.secondaryImages[1] && blog.secondaryImages[1].asset &&
+    (blog.secondaryImages[1] &&
+      blog.secondaryImages[1].asset &&
       urlFor(blog.secondaryImages[1].asset).width(424).height(424).url()) ||
     null;
 
@@ -195,7 +229,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           <Div className="col-xl-3 col-lg-4 offset-xl-1">
             {/* Start Sidebar */}
             <Spacing lg="0" md="80" />
-            <Sidebar tagdata={blog.tags}/>
+            <Sidebar tagdata={blog.tags} />
             {/* End Sidebar */}
           </Div>
         </Div>

@@ -16,8 +16,36 @@ import {
   getJobs,
   getServicesNameAndImage,
 } from "@/utils/sanityActions";
+import { Metadata } from "next";
 
 export const revalidate = 0;
+
+
+export const metadata: Metadata = {
+  applicationName: "Caliber6",
+  title: {
+    default: "Careers - Caliber6",
+    template: "Careers - Caliber6",  // Set specific title for Careers page
+  },
+  description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  openGraph: {
+    type: "website",
+    siteName: "Caliber6",
+    title: {
+      default: "Careers - Caliber6",  // Specific title for Open Graph
+      template: "Careers - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: "Careers - Caliber6",  // Specific title for Twitter
+      template: "Careers - Caliber6",
+    },
+    description: "Learn more about Caliber6 and our mission to empower businesses through strategic digital solutions.",
+  },
+};
 
 export default async function Page() {
 

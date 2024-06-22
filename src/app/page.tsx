@@ -20,13 +20,33 @@ import MovingText from "@/components/MovingText";
 import { urlFor } from "@/utils/configSanity";
 
 export const metadata: Metadata = {
-  title: "Caliber6",
-  description: "Still in development",
+  applicationName: "Caliber6",
+  title: {
+    default: "Caliber6",
+    template: "%s - Caliber6",
+  },
+  description: "Empowering Businesses Through Strategic Digital Solutions",
+  openGraph: {
+    type: "website",
+    siteName: "Caliber6",
+    title: {
+      default: "Caliber6",
+      template: "%s - Caliber6",
+    },
+    description: "Empowering Businesses Through Strategic Digital Solutions",
+  },
+  twitter: {
+    card: "summary",
+    title: {
+      default: "Caliber6",
+      template: "%s - Caliber6",
+    },
+    description: "Empowering Businesses Through Strategic Digital Solutions",
+  },
 };
 export const revalidate = 0;
 
 export default async function Home() {
-
   const partnerLogos = [
     {
       src: "/images/partner_1.svg",
@@ -88,9 +108,7 @@ export default async function Home() {
       src: "/images/partner_5.svg",
       alt: "Partner",
     },
-    
-    
-  ]
+  ];
 
   const heroSocialLinks = [
     {
@@ -173,7 +191,6 @@ export default async function Home() {
     }
   );
 
-
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0 ">
       {/* Start Hero Section */}
@@ -185,7 +202,6 @@ export default async function Home() {
         heroSocialLinks={heroSocialLinks}
         phoneNumber="+1(646)494-6771"
         email="info@caliber6.com"
-        
       />
 
       {/* End Hero Section */}

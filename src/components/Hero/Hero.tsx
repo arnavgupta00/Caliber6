@@ -24,10 +24,10 @@ const Hero: React.FC<Hero4Props> = ({
 }) => {
   return (
     <Div
-      className="cs-hero cs-style1 cs-type1 text-center cs-fixed_bg w-full  "
+      className="cs-hero cs-style1 cs-type1 text-center cs-fixed_bg w-full   mt-24 sm:mt-0"
       style={{ backgroundImage: "url(./images/hero_bg_2.jpeg)", width: "100vw" }}
     >
-      <Div className="container w-full">
+      <Div className="container w-full pt-12">
         <Div className="cs-hero_text w-full">
           <h1 className="cs-hero_title " style={{ fontSize: "clamp(55px, 10vw, 75px)" }}>
             {parse(title)}
@@ -38,7 +38,7 @@ const Hero: React.FC<Hero4Props> = ({
         </Div>
       </Div>
       <a href={scrollDownId} className="cs-down_btn " style={{
-        bottom:"200px"
+        bottom:"153px"
       }}>
         .
       </a>

@@ -13,6 +13,39 @@ import FunFact2 from "@/components/FunFact/FunFact3";
 
 export const revalidate = 0;
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const serviceDetails = await getServiceByID(params.id);
+
+  const MainImageUrl =
+    (serviceDetails.serviceImage &&
+      serviceDetails.serviceImage.asset &&
+      urlFor(serviceDetails.serviceImage.asset).width(536).height(576).url()) ||
+    null;
+
+  return {
+    title: `${serviceDetails.serviceName} - Caliber6`,
+    description:
+      serviceDetails.shortDescription ||
+      "Empowering Businesses Through Strategic Digital Solutions",
+    openGraph: {
+      title: `${serviceDetails.serviceName} - Caliber6`,
+      description:
+        serviceDetails.shortDescription ||
+        "Empowering Businesses Through Strategic Digital Solutions",
+      images: [{ url: MainImageUrl }],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${serviceDetails.serviceName} - Caliber6`,
+      description:
+        serviceDetails.shortDescription ||
+        "Empowering Businesses Through Strategic Digital Solutions",
+      images: [{ url: MainImageUrl }],
+    },
+  };
+}
+
 export default async function Page({ params }: { params: { id: string } }) {
   const serviceDetails = await getServiceByID(params.id);
 
@@ -44,13 +77,15 @@ export default async function Page({ params }: { params: { id: string } }) {
               className="text-left"
             />
           </Div>
-          
+
           <Div className="container flex flex-row justify-center items-center lg:col-lg-4 lg:w-3/6 pt-24">
-            {funfaceData[0] && funfaceData[1] && <FunFact2
-              data={funfaceData}
-              variant="cs-type1"
-              bgUrl="/images/funfact_shape_bg.svg"
-            />}
+            {funfaceData[0] && funfaceData[1] && (
+              <FunFact2
+                data={funfaceData}
+                variant="cs-type1"
+                bgUrl="/images/funfact_shape_bg.svg"
+              />
+            )}
           </Div>
         </Div>
         <Spacing lg="145" md="80" />

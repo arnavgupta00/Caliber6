@@ -8,6 +8,40 @@ import { getBlogByID, getIndustrialBlogByID } from "@/utils/sanityActions";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const blogData = await getIndustrialBlogByID(params.id);
+  const blog = blogData[0];
+
+  const MainImageUrl =
+    (blog.mainImage &&
+      blog.mainImage.asset &&
+      urlFor(blog.mainImage.asset).width(872).height(500).url()) ||
+    null;
+
+  return {
+    title: `${blog.title} - Caliber6`,
+    description:
+      blog.description ||
+      "Empowering Businesses Through Strategic Digital Solutions",
+    openGraph: {
+      title: `${blog.title} - Caliber6`,
+      description:
+        blog.description ||
+        "Empowering Businesses Through Strategic Digital Solutions",
+      images: [{ url: MainImageUrl }],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} - Caliber6`,
+      description:
+        blog.description ||
+        "Empowering Businesses Through Strategic Digital Solutions",
+      images: [{ url: MainImageUrl }],
+    },
+  };
+}
+
 export default async function Page({ params }: { params: { id: string } }) {
   var blog = await getIndustrialBlogByID(params.id);
   var blog = blog[0];
