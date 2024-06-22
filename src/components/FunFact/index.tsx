@@ -16,8 +16,8 @@ export default function FunFact({ variant, title, subtitle, data }: FunFactProps
         style={{ backgroundImage: 'url(./images/funfact_shape_bg.svg)' }}
       />
       <Div className="cs-funfact_left">
-        <Div className="cs-funfact_heading">
-          <h2>{title}</h2>
+        <Div className="cs-funfact_heading " >
+          <h2 style={{fontSize: 'clamp(35px, 75px, 100%)'}}>{title}</h2>
           <p>{subtitle}</p>
         </Div>
       </Div>

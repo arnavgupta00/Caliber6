@@ -58,7 +58,7 @@ export default function Header({ variant }: HeaderProps) {
   return (
     <>
       <header
-        className={`cs-site_header cs-style1 text-uppercase w-full lg:pl-24 lg:pr-24 ${
+        className={`cs-site_header cs-style1 text-uppercase  w-full lg:pl-24 lg:pr-24 ${
           variant ? variant : ""
         } cs-sticky_header ${isSticky ? "cs-sticky_header_active" : ""}`}
       >

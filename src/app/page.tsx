@@ -194,6 +194,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-0 ">
       {/* Start Hero Section */}
+      <Div className="bg-black ">
       <Hero
         title={`Empowering Businesses Through Strategic <br /> <span>Digital Solutions</span>`}
         subtitle="By leveraging the synergy between people and technology, we unlock new digital possibilities, create measurable <br /> outcomes, and empower you to achieve groundbreaking success and shape your organization's future."
@@ -203,7 +204,7 @@ export default async function Home() {
         phoneNumber="+1(646)494-6771"
         email="info@caliber6.com"
       />
-
+      </Div>
       {/* End Hero Section */}
       <Div className="container flex flex-row justify-center items-center">
         <FunFact2
