@@ -29,11 +29,11 @@ const Hero: React.FC<Hero4Props> = ({
     >
       <Div className="container w-full pt-12">
         <Div className="cs-hero_text w-full">
-          <h1 className="cs-hero_title " style={{ fontSize: "clamp(55px, 10vw, 75px)" }}>
+          <h1 className="cs-hero_title " style={{ fontSize: "clamp(50px, 10vw, 75px)" }}>
             {parse(title)}
           </h1>
           <Div className="cs-hero_info justify-content-center w-full">
-            <Div className="cs-hero_subtitle w-full " style={{width:"95vw" , fontSize: "clamp(20px, 10vw, 5px)"}}>{parse(subtitle)}</Div>
+            <Div className="cs-hero_subtitle w-full " style={{width:"95vw" , fontSize: "clamp(17px, 10vw, 5px)"}}>{parse(subtitle)}</Div>
           </Div>
         </Div>
       </Div>

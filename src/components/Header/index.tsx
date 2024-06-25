@@ -405,20 +405,10 @@ export default function Header({ variant }: HeaderProps) {
             minHeight: "100vh",
             zIndex: 999,
             minWidth: "100vw",
+            padding: "20px",
             backgroundColor: "rgba(0,0,0,0.5)",
           }}
-        > 
-          <X
-            className="text-white absolute "
-            onClick={() => {
-              setLoginMenuShow(false);
-            }}
-            size={50}
-            style={{ fontSize: "", top: "10%", left: "90%" , border: "1px solid white", borderRadius: "50%" , padding:"10px"}}
-          />
-
-          
-
+        >
           <Div
             className="  p-8  flex  justify-center items-center rounded-3xl 	"
             style={{
@@ -429,7 +419,23 @@ export default function Header({ variant }: HeaderProps) {
           >
             <form action="#" className="row" onSubmit={handleSubmit}>
               <Div className="cs-side_header_shape" />
-
+              <Div className="text-right" style={{
+                position: "relative",
+                top: "-10px",
+                left: "87%",
+              
+              }}>
+                <X
+                  className="text-white cursor-pointer"
+                  onClick={() => {
+                    setLoginMenuShow(false);
+                  }}
+                  size={30}
+                  style={{
+                    fontSize: "",
+                  }}
+                />
+              </Div>
               <h2
                 className="cs-side_header_heading col-sm-12"
                 style={{
