@@ -9,7 +9,7 @@ import DropDown from "./DropDown";
 import Link from "next/link";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Spacing from "../Spacing";
-import { X } from "lucide-react";
+import { CirclePlus, User, X } from "lucide-react";
 interface HeaderProps {
   variant?: string;
 }
@@ -333,18 +333,22 @@ export default function Header({ variant }: HeaderProps) {
                   </span>
                 </Div>
               </Div>
-              <Div className="cs-main_header_right">
-                <Div className="cs-toolbox">
+              <Div
+                className="cs-main_header_right"
+                style={{
+                  zIndex: 1000,
+                }}
+              >
+                <Div className="cs-toolbox" style={{}}>
                   <span
                     className="cs-icon_btn"
+                    style={{
+                      zIndex: 999,
+                      display: loginMenuShow ? "none" : "",
+                    }}
                     onClick={() => setLoginMenuShow(true)}
                   >
-                    <span className="cs-icon_btn_in">
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                    </span>
+                    <User />
                   </span>
                 </Div>
               </Div>
@@ -403,14 +407,17 @@ export default function Header({ variant }: HeaderProps) {
             minWidth: "100vw",
             backgroundColor: "rgba(0,0,0,0.5)",
           }}
-        >
+        > 
           <X
-            className="text-white absolute"
+            className="text-white absolute "
             onClick={() => {
               setLoginMenuShow(false);
             }}
-            style={{ fontSize: "2rem", top: "10%", left: "90%" }}
+            size={50}
+            style={{ fontSize: "", top: "10%", left: "90%" , border: "1px solid white", borderRadius: "50%" , padding:"10px"}}
           />
+
+          
 
           <Div
             className="  p-8  flex  justify-center items-center rounded-3xl 	"

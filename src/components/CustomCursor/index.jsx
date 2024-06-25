@@ -128,8 +128,10 @@ export default function CustomCursor() {
   };
   return (
     <>
-      <div ref={cursorDotOutline} id="cursor-dot-outline" />
-      <div ref={cursorDot} id="cursor-dot" />
+      <div ref={cursorDotOutline} style={{
+        display:"none"
+      }} id="cursor-dot-outline" />
+      <div ref={cursorDot}  id="cursor-dot" />
     </>
   );
 }
